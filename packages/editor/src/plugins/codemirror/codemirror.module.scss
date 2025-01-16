@@ -1,0 +1,209 @@
+.wrapper {
+  margin: 1em 0;
+  border: 1px solid var(--semi-color-border);
+  border-radius: var(--semi-border-radius-medium);
+  overflow: hidden;
+  padding: 0.8rem;
+  position: relative;
+
+  .toolbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    z-index: 1;
+    align-items: center;
+    border-bottom-left-radius: var(--semi-border-radius-medium);
+    background-color: rgb(var(--semi-grey-0));
+  }
+
+  :global {
+    .cm-editor {
+      --sp-font-mono: var(--font-mono);
+      --sp-font-body: var(--font-default);
+      padding: var(--sp-space-4) 0;
+      background-color: var(--semi-color-bg-1);
+    }
+
+    .cm-activeLineGutter {
+      background-color: var(--semi-color-fill-0);
+    }
+
+    .cm-gutters {
+      border-right: solid 1px var(--semi-color-border);
+    }
+
+    .sp-editor .cm-editor {
+      padding-bottom: 0;
+    }
+
+    .cm-scroller {
+      padding: 0 !important;
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+
+    .cm-focused {
+      outline: none;
+    }
+
+    .sp-wrapper {
+      overflow: hidden;
+    }
+
+    .sp-layout {
+      border: none;
+    }
+
+    .sp-cm {
+      pre {
+        white-space: break-spaces;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        flex-shrink: 1;
+      }
+    }
+
+    /** Diff viewer */
+    .cm-mergeView .cm-scroller {
+      font-family: var(--font-mono);
+      line-height: 1.3rem;
+      font-size: 0.75rem;
+    }
+
+    /** Diff viewer */
+    .cm-sourceView .cm-scroller {
+      font-family: var(--font-mono);
+      line-height: 1.3rem;
+      font-size: 0.75rem;
+    }
+
+    .cm-gutters {
+      background: transparent;
+      font-size: 0.6rem;
+    }
+
+    .cm-activeLine {
+      background: transparent;
+    }
+
+    .cm-tooltip-autocomplete {
+      background: var(--semi-color-bg-2);
+      border-radius: var(--semi-border-radius-medium);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      font-size: 12px;
+      color: var(--semi-color-text-0);
+
+      ul[role='listbox'] {
+        margin: 0 !important;
+        padding: 0 !important;
+        padding-left: 0 !important;
+
+        li {
+          padding: 4px;
+
+          &[aria-selected='true'] {
+            background-color: var(--semi-color-fill-0);
+          }
+
+          .cm-completionIcon {
+            width: auto;
+          }
+
+          .cm-completionMatchedText {
+            background-color: var(--semi-color-highlight-bg);
+            text-decoration: none;
+            font-weight: 600;
+          }
+
+          .cm-completionDetail {
+            color: var(--semi-color-text-3);
+          }
+        }
+      }
+    }
+
+    .cm-gutterElement {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  & .cm-activeLineGutter {
+    background-color: var(--semi-color-fill-0);
+  }
+
+  & .cm-gutters {
+    border-right: solid 1px var(--semi-color-border);
+  }
+
+  & .sp-editor .cm-editor {
+    padding-bottom: 0;
+  }
+
+  & .cm-scroller {
+    padding: 0 !important;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  & .cm-focused {
+    outline: none;
+  }
+
+  & .sp-wrapper {
+    overflow: hidden;
+  }
+
+  & .sp-layout {
+    border: none;
+  }
+
+  & .sp-cm {
+    & pre {
+      white-space: break-spaces;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      flex-shrink: 1;
+    }
+  }
+
+  /** Diff viewer */
+  & .cm-mergeView .cm-scroller {
+    font-family: var(--font-mono);
+    line-height: 1.3rem;
+    font-size: 0.75rem;
+  }
+
+  /** Diff viewer */
+  & .cm-sourceView .cm-scroller {
+    font-family: var(--font-mono);
+    line-height: 1.3rem;
+    font-size: 0.75rem;
+  }
+
+  & .cm-gutters {
+    background: transparent;
+    font-size: 0.6rem;
+  }
+
+  & .cm-activeLine {
+    background: transparent;
+  }
+
+  & .cm-tooltip-autocomplete {
+    background: var(--semi-color-bg-2);
+  }
+
+  & .cm-gutterElement {
+    display: flex;
+    align-items: center;
+  }
+
+  hr[data-lexical-decorator='true'].selected {
+    outline: 2px solid var(--semi-color-primary);
+  }
+}

@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  align-items: center;
+  background-color: rgb(var(--semi-grey-0));
+  gap: 4px;
+  padding: 4px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}

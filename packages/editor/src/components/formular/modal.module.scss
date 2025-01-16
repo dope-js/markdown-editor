@@ -1,0 +1,44 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .input {
+    font-family: var(--font-mono);
+    word-break: break-all;
+    outline: solid 1px var(--semi-color-primary);
+
+    :global(.dopejs-input-textarea) {
+      font-family: var(--font-mono);
+      line-height: 150%;
+      font-size: 14px;
+    }
+  }
+
+  .preview {
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .error {
+    color: var(--semi-color-danger);
+    font-family: var(--font-mono);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .error-formular {
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .message {
+      font-size: 12px;
+      padding: 4px;
+      background-color: var(--semi-color-fill-0);
+      border-radius: var(--semi-border-radius-medium);
+    }
+  }
+}

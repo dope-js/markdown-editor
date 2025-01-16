@@ -1,0 +1,207 @@
+.container {
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.image-wrapper {
+  --image-padding: 6px;
+
+  display: inline-block;
+  position: relative;
+  padding: var(--image-padding);
+  border-radius: var(--semi-border-radius-medium);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--semi-color-fill-0);
+  }
+
+  &:has(.focused) {
+    background-color: var(--semi-color-fill-0);
+  }
+
+  &[draggable='true'] {
+    cursor: move;
+    /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+  }
+
+  .image {
+    border: solid 2px transparent;
+    display: flex;
+    position: relative;
+
+    &.focused {
+      border-color: var(--semi-color-primary);
+    }
+  }
+
+  .image-control-wrapper-resizing {
+    touch-action: none;
+  }
+
+  .image-resizer-wrapper {
+    &.none {
+      .image-resizer {
+        display: none;
+      }
+    }
+
+    &.all {
+      .image-resizer-n,
+      .image-resizer-s {
+        cursor: ns-resize;
+      }
+
+      .image-resizer-ne,
+      .image-resizer-sw {
+        cursor: nesw-resize;
+      }
+
+      .image-resizer-e,
+      .image-resizer-w {
+        cursor: ew-resize;
+      }
+
+      .image-resizer-nw,
+      .image-resizer-se {
+        cursor: nwse-resize;
+      }
+    }
+
+    &.can-zoomin {
+      .image-resizer-n {
+        cursor: n-resize;
+      }
+
+      .image-resizer-s {
+        cursor: s-resize;
+      }
+
+      .image-resizer-ne {
+        cursor: ne-resize;
+      }
+
+      .image-resizer-sw {
+        cursor: sw-resize;
+      }
+
+      .image-resizer-e {
+        cursor: e-resize;
+      }
+
+      .image-resizer-w {
+        cursor: w-resize;
+      }
+
+      .image-resizer-nw {
+        cursor: nw-resize;
+      }
+
+      .image-resizer-se {
+        cursor: se-resize;
+      }
+    }
+
+    &.can-zoomout {
+      .image-resizer-n {
+        cursor: s-resize;
+      }
+
+      .image-resizer-s {
+        cursor: n-resize;
+      }
+
+      .image-resizer-ne {
+        cursor: sw-resize;
+      }
+
+      .image-resizer-sw {
+        cursor: ne-resize;
+      }
+
+      .image-resizer-e {
+        cursor: w-resize;
+      }
+
+      .image-resizer-w {
+        cursor: e-resize;
+      }
+
+      .image-resizer-nw {
+        cursor: se-resize;
+      }
+
+      .image-resizer-se {
+        cursor: nw-resize;
+      }
+    }
+
+    .image-resizer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      background-color: var(--semi-color-bg-1);
+      border: 1px solid var(--semi-color-border);
+      z-index: 2;
+      border-radius: 50%;
+
+      &.image-resizer-n {
+        top: calc(var(--image-padding) + 1px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &.image-resizer-ne {
+        top: calc(var(--image-padding) + 1px);
+        right: calc(var(--image-padding) + 1px);
+        transform: translate(50%, -50%);
+      }
+
+      &.image-resizer-e {
+        top: 50%;
+        right: calc(var(--image-padding) + 1px);
+        transform: translate(50%, -50%);
+      }
+
+      &.image-resizer-se {
+        bottom: calc(var(--image-padding) + 1px);
+        right: calc(var(--image-padding) + 1px);
+        transform: translate(50%, 50%);
+      }
+
+      &.image-resizer-s {
+        bottom: calc(var(--image-padding) + 1px);
+        left: 50%;
+        transform: translate(-50%, 50%);
+      }
+
+      &.image-resizer-sw {
+        bottom: calc(var(--image-padding) + 1px);
+        left: calc(var(--image-padding) + 1px);
+        transform: translate(-50%, 50%);
+      }
+
+      &.image-resizer-w {
+        top: 50%;
+        left: calc(var(--image-padding) + 1px);
+        transform: translate(-50%, -50%);
+      }
+
+      &.image-resizer-nw {
+        top: calc(var(--image-padding) + 1px);
+        left: calc(var(--image-padding) + 1px);
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.formular {
+  display: block;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 12px 0;
+    user-select: none;
+    border-radius: var(--semi-border-radius-medium);
+
+    &:hover {
+      background-color: var(--semi-color-fill-0);
+    }
+
+    &.selected {
+      background-color: var(--semi-color-fill-0);
+    }
+
+    .empty {
+      font-style: italic;
+      color: var(--semi-color-text-3);
+    }
+  }
+}
+
+.formular-menu {
+  padding: 4px;
+
+  .content {
+    :global(.dopejs-popover-content) {
+      display: flex;
+      padding: 4px;
+      gap: 4px;
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,146 @@
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.underline-strikethrough {
+  text-decoration: underline line-through;
+}
+
+.subscript {
+  font-size: 0.8em;
+  vertical-align: sub !important;
+}
+
+.superscript {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.code {
+  background-color: var(--semi-color-fill-0);
+  padding: 1px 0.2rem;
+  margin: 0 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 94%;
+  border-radius: var(--semi-border-radius-small);
+}
+
+.nested-list-item {
+  list-style: none;
+  list-style-type: none;
+}
+
+.nested-list-item:before,
+.nested-list-item:after {
+  display: none;
+}
+
+.listitem {
+  margin: 0.5rem 0;
+}
+
+.listItemChecked,
+.listItemUnchecked {
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  margin-inline-start: -1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  list-style-type: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+}
+
+.listItemChecked {
+  text-decoration: line-through;
+}
+
+.listItemUnchecked:before,
+.listItemChecked:before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--semi-border-radius-small);
+  top: 2px;
+  left: 0;
+  cursor: pointer;
+  display: block;
+  background-size: cover;
+  position: absolute;
+}
+
+.listItemUnchecked[dir='rtl']:before,
+.listItemChecked[dir='rtl']:before {
+  left: auto;
+  right: 0;
+}
+
+.listItemUnchecked:before {
+  border: 1px solid var(--semi-color-border);
+}
+
+.listItemChecked:before {
+  border: 1px solid var(--semi-color-border);
+  background-color: var(--semi-color-primary);
+  background-repeat: no-repeat;
+}
+
+.listItemChecked:after {
+  content: '';
+  cursor: pointer;
+  border-color: var(--semi-color-white);
+  border-style: solid;
+  position: absolute;
+  display: block;
+  top: 4.5px;
+  left: 5.5px;
+  width: 3px;
+  height: 6px;
+  transform: rotate(45deg);
+  border-width: 0 2px 2px 0;
+}
+
+.nestedListItem {
+  list-style-type: none;
+}
+
+.nestedListItem:before,
+.nestedListItem:after {
+  display: none;
+}
+
+.mdxExpression {
+  font-family: var(--font-mono);
+  font-size: 84%;
+  color: var(--accentText);
+
+  & input:focus-visible {
+    outline: none;
+  }
+}
