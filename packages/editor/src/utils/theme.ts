@@ -1,4 +1,4 @@
-import styles from '@/styles/lexical-theme.module.css';
+import styles from '@/styles/lexical-theme.module.scss';
 import type { EditorThemeClasses } from 'lexical';
 
 export const lexicalTheme: EditorThemeClasses = {

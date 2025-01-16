@@ -5,14 +5,14 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import autoprefixer from 'autoprefixer';
+import { builtinModules as nodeBuiltinModules } from 'node:module';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Plugin } from 'rollup';
 import { defineConfig } from 'rollup';
-import { cssModules } from 'rollup-plugin-css-modules';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
-import scss from 'rollup-plugin-scss';
+import pkg from './package.json' assert { type: 'json' };
 
 const root = dirname(fileURLToPath(import.meta.url));
 
@@ -63,12 +63,22 @@ export default async () => {
       }
       warn(warning);
     },
-    external: ['react', 'react-dom', '@douyinfe/semi-ui', 'react-katex'],
+    external: [
+      ...nodeBuiltinModules,
+      ...Object.keys(pkg.dependencies),
+      ...Object.keys(pkg.peerDependencies),
+      ...Object.keys(pkg.devDependencies),
+      'react',
+      'react-dom',
+      '@douyinfe/semi-ui',
+      'react-katex',
+      'axios',
+    ],
     plugins: [
       peerDepsExternal() as Plugin,
       nodeResolve({ preferBuiltins: true }),
       typescript({
-        tsconfig: resolve(root, 'tsconfig.json'),
+        tsconfig: resolve(root, 'tsconfig.base.json'),
         sourceMap: true,
         declaration: true,
         declarationDir: resolve(root, 'lib', '.typing.temp'),
@@ -76,15 +86,15 @@ export default async () => {
         jsx: 'react-jsx',
       }),
       postcss({
+        extensions: ['.css', '.scss'],
         plugins: [autoprefixer()],
         sourceMap: true,
-        extract: true,
+        extract: resolve(root, 'lib', 'style.css'),
         minimize: true,
+        use: { sass: { silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin'] }, stylus: {}, less: {} },
       }),
       json(),
       terser(),
-      cssModules(),
-      scss(),
       commonjs({ extensions: ['.js'] }),
       babel({
         babelHelpers: 'runtime',

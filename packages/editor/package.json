@@ -2,12 +2,34 @@
   "name": "@dope-js/markdown-editor",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
   },
   "scripts": {
     "rollup": "rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript"
+  },
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
+  "browser": "lib/index.umd.js",
+  "types": "src/index.ts",
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./lib/index.es.js",
+      "require": "./lib/index.cjs.js",
+      "browser": "./lib/index.umd.js"
+    },
+    "./lib/*": "./lib/*",
+    "./package.json": "./package.json",
+    "./style.css": "./lib/style.css"
+  },
+  "publishConfig": {
+    "types": "lib/index.d.ts",
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [],
   "author": "",
