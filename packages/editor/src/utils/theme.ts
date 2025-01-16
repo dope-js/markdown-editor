@@ -1,5 +1,5 @@
-import styles from '@/styles/lexical-theme.module.scss';
 import type { EditorThemeClasses } from 'lexical';
+import styles from '../styles/lexical-theme.module.scss';
 
 export const lexicalTheme: EditorThemeClasses = {
   text: {

@@ -24,6 +24,8 @@ import './styles/editor.scss';
 import type { EditorMethods, EditorProps, EditorPlugin } from './types';
 import { noop } from './utils';
 
+import 'katex/dist/katex.min.css';
+
 const defaultMarkdownOptions: ToMarkdownOptions = {
   listItemIndent: 'one',
 };

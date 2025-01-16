@@ -30,7 +30,6 @@ export default async () => {
         dir: resolve(root, 'lib'),
         entryFileNames: '[name].cjs.js',
         format: 'cjs',
-        globals: { react: 'React' },
         sourcemap: true,
       },
       {
@@ -38,18 +37,17 @@ export default async () => {
         dir: resolve(root, 'lib'),
         entryFileNames: '[name].es.js',
         format: 'es',
-        globals: { react: 'React' },
         sourcemap: true,
         esModule: true,
       },
-      {
-        name: 'dopejs-markdown-editor',
-        dir: resolve(root, 'lib'),
-        entryFileNames: '[name].umd.js',
-        format: 'umd',
-        globals: { react: 'React' },
-        sourcemap: true,
-      },
+      // {
+      //   name: 'dopejs-markdown-editor',
+      //   dir: resolve(root, 'lib'),
+      //   entryFileNames: '[name].umd.js',
+      //   format: 'umd',
+      //   globals: { react: 'React', 'react-dom': 'ReactDOM', 'react/jsx-runtime': 'jsxRuntime' },
+      //   sourcemap: true,
+      // },
     ],
     onwarn(warning, warn) {
       if (warning.message.includes('Package subpath')) {
@@ -70,9 +68,6 @@ export default async () => {
       ...Object.keys(pkg.devDependencies),
       'react',
       'react-dom',
-      '@douyinfe/semi-ui',
-      'react-katex',
-      'axios',
     ],
     plugins: [
       peerDepsExternal() as Plugin,
@@ -82,6 +77,7 @@ export default async () => {
         sourceMap: true,
         declaration: true,
         declarationDir: resolve(root, 'lib', '.typing.temp'),
+        target: 'ES6',
         lib: ['ESNext', 'DOM'],
         jsx: 'react-jsx',
       }),
@@ -97,7 +93,6 @@ export default async () => {
       terser(),
       commonjs({ extensions: ['.js'] }),
       babel({
-        babelHelpers: 'runtime',
         exclude: /node_modules/,
         extensions: ['.js', '.ts', '.tsx'],
         presets: [
@@ -109,7 +104,6 @@ export default async () => {
             },
           ],
         ],
-        plugins: ['@babel/plugin-transform-runtime'],
       }),
     ],
   });
