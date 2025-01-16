@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 import type { Options as ToMarkdownOptions } from 'mdast-util-to-markdown';
-import { forwardRef, useMemo } from 'react';
+import { forwardRef, useEffect, useMemo } from 'react';
 import { LexicalProvider, Methods, EditorWrapper, RichTextEditor } from './components';
 import { EditorProvider } from './contexts';
 import type { CodeBlockEditorDescriptor } from './plugins';
@@ -89,6 +89,9 @@ export const MDXEditor = forwardRef<EditorMethods, EditorProps>((props, ref) => 
 
     return plugins;
   }, [props.showToolbar]);
+  useEffect(() => {
+    console.log(props);
+  }, [props]);
 
   return (
     <EditorProvider editorProps={props}>
