@@ -6,7 +6,7 @@
   .input {
     font-family: var(--font-mono);
     word-break: break-all;
-    outline: solid 1px var(--semi-color-primary);
+    outline: solid 1px var(--color-primary);
 
     :global(.dme-input-textarea) {
       font-family: var(--font-mono);
@@ -22,7 +22,7 @@
   }
 
   .error {
-    color: var(--semi-color-danger);
+    color: var(--color-danger);
     font-family: var(--font-mono);
     display: flex;
     flex-direction: column;
@@ -37,8 +37,8 @@
     .message {
       font-size: 12px;
       padding: 4px;
-      background-color: var(--semi-color-fill-0);
-      border-radius: var(--semi-border-radius-medium);
+      background-color: var(--color-fill-0);
+      border-radius: var(--border-radius-medium);
     }
   }
 }

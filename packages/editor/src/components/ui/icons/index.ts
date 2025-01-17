@@ -3,6 +3,7 @@ export * from './align-left';
 export * from './align-right';
 export * from './bold';
 export * from './check-list';
+export * from './clear';
 export * from './code-block';
 export * from './code';
 export * from './delete';

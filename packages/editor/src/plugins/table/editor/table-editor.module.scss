@@ -18,7 +18,7 @@
 
   > tbody > tr > td:not(.tool-cell),
   > tbody > tr > th:not(.tool-cell):not([data-tool-cell='true']) {
-    border: 1px solid var(--semi-color-border);
+    border: 1px solid var(--color-border);
     padding: 0.4rem 0.5rem;
     white-space: normal;
 
@@ -31,7 +31,7 @@
     }
 
     &[data-active='true'] {
-      outline: solid 1px var(--semi-color-primary);
+      outline: solid 1px var(--color-primary);
     }
   }
 

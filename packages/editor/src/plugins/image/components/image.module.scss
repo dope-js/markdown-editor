@@ -11,17 +11,17 @@
   display: inline-block;
   position: relative;
   padding: var(--image-padding);
-  border-radius: var(--semi-border-radius-medium);
+  border-radius: var(--border-radius-medium);
   display: flex;
   justify-content: center;
   align-items: center;
 
   &:hover {
-    background-color: var(--semi-color-fill-0);
+    background-color: var(--color-fill-0);
   }
 
   &:has(.focused) {
-    background-color: var(--semi-color-fill-0);
+    background-color: var(--color-fill-0);
   }
 
   &[draggable='true'] {
@@ -38,7 +38,7 @@
     position: relative;
 
     &.focused {
-      border-color: var(--semi-color-primary);
+      border-color: var(--color-primary);
     }
   }
 
@@ -150,8 +150,8 @@
       width: 10px;
       height: 10px;
       position: absolute;
-      background-color: var(--semi-color-bg-1);
-      border: 1px solid var(--semi-color-border);
+      background-color: var(--color-bg-1);
+      border: 1px solid var(--color-border);
       z-index: 2;
       border-radius: 50%;
 

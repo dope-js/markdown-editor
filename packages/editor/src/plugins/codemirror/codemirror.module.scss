@@ -1,7 +1,7 @@
 .wrapper {
   margin: 1em 0;
-  border: 1px solid var(--semi-color-border);
-  border-radius: var(--semi-border-radius-medium);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-medium);
   overflow: hidden;
   padding: 0.8rem;
   position: relative;
@@ -15,8 +15,8 @@
     padding: 4px;
     z-index: 1;
     align-items: center;
-    border-bottom-left-radius: var(--semi-border-radius-medium);
-    background-color: rgb(var(--semi-grey-0));
+    border-bottom-left-radius: var(--border-radius-medium);
+    background-color: rgb(var(--grey-0));
   }
 
   :global {
@@ -24,15 +24,15 @@
       --sp-font-mono: var(--font-mono);
       --sp-font-body: var(--font-default);
       padding: var(--sp-space-4) 0;
-      background-color: var(--semi-color-bg-1);
+      background-color: var(--color-bg-1);
     }
 
     .cm-activeLineGutter {
-      background-color: var(--semi-color-fill-0);
+      background-color: var(--color-fill-0);
     }
 
     .cm-gutters {
-      border-right: solid 1px var(--semi-color-border);
+      border-right: solid 1px var(--color-border);
     }
 
     .sp-editor .cm-editor {
@@ -90,12 +90,12 @@
     }
 
     .cm-tooltip-autocomplete {
-      background: var(--semi-color-bg-2);
-      border-radius: var(--semi-border-radius-medium);
+      background: var(--color-bg-2);
+      border-radius: var(--border-radius-medium);
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       font-size: 12px;
-      color: var(--semi-color-text-0);
+      color: var(--color-text-0);
 
       ul[role='listbox'] {
         margin: 0 !important;
@@ -106,7 +106,7 @@
           padding: 4px;
 
           &[aria-selected='true'] {
-            background-color: var(--semi-color-fill-0);
+            background-color: var(--color-fill-0);
           }
 
           .cm-completionIcon {
@@ -114,13 +114,13 @@
           }
 
           .cm-completionMatchedText {
-            background-color: var(--semi-color-highlight-bg);
+            background-color: var(--color-highlight-bg);
             text-decoration: none;
             font-weight: 600;
           }
 
           .cm-completionDetail {
-            color: var(--semi-color-text-3);
+            color: var(--color-text-3);
           }
         }
       }
@@ -133,11 +133,11 @@
   }
 
   & .cm-activeLineGutter {
-    background-color: var(--semi-color-fill-0);
+    background-color: var(--color-fill-0);
   }
 
   & .cm-gutters {
-    border-right: solid 1px var(--semi-color-border);
+    border-right: solid 1px var(--color-border);
   }
 
   & .sp-editor .cm-editor {
@@ -195,7 +195,7 @@
   }
 
   & .cm-tooltip-autocomplete {
-    background: var(--semi-color-bg-2);
+    background: var(--color-bg-2);
   }
 
   & .cm-gutterElement {
@@ -204,6 +204,6 @@
   }
 
   hr[data-lexical-decorator='true'].selected {
-    outline: 2px solid var(--semi-color-primary);
+    outline: 2px solid var(--color-primary);
   }
 }

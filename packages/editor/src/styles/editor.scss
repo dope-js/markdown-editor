@@ -78,7 +78,7 @@
     blockquote {
       margin: 0;
       padding: 0.4em 1em;
-      border-left: solid 3px var(--semi-color-border);
+      border-left: solid 3px var(--color-border);
     }
 
     hr {
@@ -92,7 +92,7 @@
         left: 0;
         right: 0;
         height: 2px;
-        background-color: var(--semi-color-border);
+        background-color: var(--color-border);
         top: 50%;
         transform: translateY(-50%);
       }
@@ -106,7 +106,7 @@
       margin: 1em 0;
 
       li::marker {
-        color: rgb(var(--semi-grey-3));
+        color: rgb(var(--grey-3));
       }
     }
 
@@ -125,12 +125,12 @@
 
     :global {
       hr[data-lexical-decorator='true'].selected::before {
-        border: 2px solid var(--semi-color-primary);
+        border: 2px solid var(--color-primary);
       }
     }
 
     &.placeholder {
-      color: var(--semi-color-text-3);
+      color: var(--color-text-3);
       overflow: hidden;
       position: absolute;
       top: 0;
