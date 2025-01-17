@@ -1,8 +1,9 @@
-import { Button, Tooltip } from '@douyinfe/semi-ui';
-import type { Size } from '@douyinfe/semi-ui/lib/es/button';
+import { Tooltip } from '@douyinfe/semi-ui';
 import { clsx } from 'clsx';
 import type { CSSProperties, FC, MouseEvent, ReactNode } from 'react';
 import { useMemo } from 'react';
+import type { Size } from '../ui';
+import { Button } from '../ui';
 import styles from './button.module.scss';
 
 interface IToolbarButtonProps {

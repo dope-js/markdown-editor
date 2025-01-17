@@ -1,0 +1,70 @@
+.dme-button {
+  &.dme-button-with-icon {
+    display: inline-flex;
+    align-items: center;
+
+    .dme-button-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &.dme-button-loading {
+    pointer-events: none;
+    cursor: not-allowed;
+
+    .dme-button-content {
+      & > svg {
+        width: 16px;
+        height: 16px;
+        animation: 0.6s linear infinite dme-animation-rotate;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  &.dme-button-with-icon-only {
+    padding-left: var(--spacing-tight);
+    padding-right: var(--spacing-tight);
+    padding-top: var(--spacing-tight);
+    padding-bottom: var(--spacing-tight);
+    justify-content: center;
+    align-items: center;
+
+    &.dme-button-size {
+      &-small {
+        padding-left: var(--spacing-extra-tight);
+        padding-right: var(--spacing-extra-tight);
+        padding-top: var(--spacing-extra-tight);
+        padding-bottom: var(--spacing-extra-tight);
+      }
+
+      &-large {
+        padding-left: var(--spacing-base-tight);
+        padding-right: var(--spacing-base-tight);
+        padding-top: var(--spacing-base-tight);
+        padding-bottom: var(--spacing-base-tight);
+      }
+    }
+  }
+
+  &-content {
+    &-left {
+      margin-right: var(--spacing-tight);
+    }
+
+    &-right {
+      margin-left: var(--spacing-tight);
+    }
+  }
+}
+
+@keyframes dme-animation-rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

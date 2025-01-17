@@ -1,12 +1,12 @@
 .minor {
-  :global(.dopejs-button-content) {
+  :global(.dme-button-content) {
     color: rgba(var(--semi-grey-2), 1);
   }
 
   &:hover {
     color: var(--semi-color-text-1);
 
-    :global(.dopejs-button-content) {
+    :global(.dme-button-content) {
       color: var(--semi-color-text-1);
     }
   }
@@ -15,7 +15,7 @@
     color: var(--semi-color-text-1);
     background-color: var(--semi-color-tertiary-active);
 
-    :global(.dopejs-button-content) {
+    :global(.dme-button-content) {
       color: var(--semi-color-text-1);
     }
   }

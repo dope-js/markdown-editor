@@ -20,11 +20,11 @@ import {
   useCodeBlockEditorContext,
   imagePlugin,
 } from './plugins';
-import './styles/editor.scss';
 import type { EditorMethods, EditorProps, EditorPlugin } from './types';
 import { noop } from './utils';
 
 import 'katex/dist/katex.min.css';
+import './styles/editor.scss';
 
 const defaultMarkdownOptions: ToMarkdownOptions = {
   listItemIndent: 'one',
@@ -96,7 +96,7 @@ export const MDXEditor = forwardRef<EditorMethods, EditorProps>((props, ref) => 
   return (
     <EditorProvider editorProps={props}>
       <EditorWrapper plugins={plugins}>
-        <div className={clsx('mdxeditor', props.className)}>
+        <div className={clsx('mdxeditor', { dark: props.dark }, props.className)}>
           <LexicalProvider>
             <RichTextEditor />
           </LexicalProvider>

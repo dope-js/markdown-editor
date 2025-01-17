@@ -1,4 +1,4 @@
-import { Divider } from '@douyinfe/semi-ui';
+import { Divider } from '@/components';
 import type { FC } from 'react';
 import { InsertCodeBlock } from './code-block';
 import { InsertFormular } from './formular';

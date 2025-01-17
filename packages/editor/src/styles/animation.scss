@@ -1,0 +1,36 @@
+.mdxeditor {
+  --transform_scale-none: scale(1, 1);
+  --transform_scale-small: scale(1, 1);
+  --transform_scale-medium: scale(1, 1);
+  --transform_scale-large: scale(1, 1);
+
+  --transform-rotate-none: rotate(0deg);
+  --transform_rotate-clockwise90deg: rotate(90deg);
+  --transform_rotate-clockwise180deg: rotate(180deg);
+  --transform_rotate-clockwise270deg: rotate(270deg);
+  --transform_rotate-clockwise360deg: rotate(360deg);
+  --transform_rotate-anticlockwise90deg: rotate(-90deg);
+  --transform_rotate-anticlockwise180deg: rotate(-180deg);
+  --transform_rotate-anticlockwise270deg: rotate(-270deg);
+  --transform_rotate-anticlockwise360deg: rotate(-360deg);
+  --transition_delay-fast: 180ms;
+  --transition_delay-none: 0ms;
+  --transition_delay-slow: 1000ms;
+  --transition_delay-faster: 120ms;
+  --transition_delay-normal: 600ms;
+  --transition_delay-slower: 1200ms;
+  --transition_delay-fastest: 90ms;
+  --transition_delay-slowest: 1800ms;
+  --transition_duration-fast: 180ms;
+  --transition_duration-none: 0ms;
+  --transition_duration-slow: 1000ms;
+  --transition_duration-faster: 120ms;
+  --transition_duration-normal: 600ms;
+  --transition_duration-slower: 1200ms;
+  --transition_duration-fastest: 90ms;
+  --transition_duration-slowest: 1800ms;
+  --transition_function-easeIn: cubic-bezier(0.4, 0, 1, 1);
+  --transition_function-linear: linear;
+  --transition_function-easeOut: cubic-bezier(0, 0, 0.2, 1);
+  --transition_function-easeInOut: cubic-bezier(0.4, 0, 0.2, 1);
+}

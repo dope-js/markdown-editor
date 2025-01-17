@@ -10,6 +10,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Plugin } from 'rollup';
 import { defineConfig } from 'rollup';
+import copy from 'rollup-plugin-copy';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import pkg from './package.json' assert { type: 'json' };
@@ -26,14 +27,14 @@ export default async () => {
     input: { index: resolve(root, 'src/index.ts') },
     output: [
       {
-        name: 'dopejs-markdown-editor',
+        name: 'dme-markdown-editor',
         dir: resolve(root, 'lib'),
         entryFileNames: '[name].cjs.js',
         format: 'cjs',
         sourcemap: true,
       },
       {
-        name: 'dopejs-markdown-editor',
+        name: 'dme-markdown-editor',
         dir: resolve(root, 'lib'),
         entryFileNames: '[name].es.js',
         format: 'es',
@@ -41,7 +42,7 @@ export default async () => {
         esModule: true,
       },
       // {
-      //   name: 'dopejs-markdown-editor',
+      //   name: 'dme-markdown-editor',
       //   dir: resolve(root, 'lib'),
       //   entryFileNames: '[name].umd.js',
       //   format: 'umd',
@@ -105,6 +106,7 @@ export default async () => {
           ],
         ],
       }),
+      copy({ targets: [{ src: resolve(root, '..', '..', 'assets', 'fonts'), dest: resolve(root, 'lib') }] }),
     ],
   });
 };

@@ -2,7 +2,9 @@ import { clsx } from 'clsx';
 import type { CSSProperties, ComponentType, DetailedHTMLProps, ReactNode } from 'react';
 import { createElement, forwardRef } from 'react';
 
-export type IconSize = 'inherit' | 'extra-small' | 'small' | 'default' | 'large' | 'extra-large';
+import './icon.scss';
+
+export type IconSize = 'small' | 'default';
 
 export interface IconProps extends DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
   svg: ReactNode;
@@ -15,15 +17,12 @@ export interface IconProps extends DetailedHTMLProps<React.HTMLAttributes<HTMLSp
 const Icon = forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
   const { svg, spin = false, rotate, style, className, type, size = 'default', ...restProps } = props;
   const classes = clsx(
-    `dopejs-icon`,
+    `dme-icon`,
     {
-      [`dopejs-icon-extra-small`]: size === 'extra-small', // 8x8
-      [`dopejs-icon-small`]: size === 'small', // 12x12
-      [`dopejs-icon-default`]: size === 'default', // 16x16
-      [`dopejs-icon-large`]: size === 'large', // 20x20
-      [`dopejs-icon-extra-large`]: size === 'extra-large', // 24x24
-      [`dopejs-icon-spinning`]: spin === true,
-      [`dopejs-icon-${type}`]: Boolean(type),
+      [`dme-icon-small`]: size === 'small', // 12x12
+      [`dme-icon-default`]: size === 'default', // 16x16
+      [`dme-icon-spinning`]: spin === true,
+      [`dme-icon-${type}`]: Boolean(type),
     },
     className
   );
@@ -48,9 +47,5 @@ export const convertIcon = (Svg: ComponentType, iconType: string) => {
 
   InnerIcon.displayName = 'Icon';
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore used to judge whether it is a semi-icon in semi-ui
-  // builtin icon case
-  InnerIcon.elementType = 'Icon';
   return InnerIcon;
 };
