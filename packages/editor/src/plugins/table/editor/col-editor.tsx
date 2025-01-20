@@ -1,4 +1,5 @@
 import {
+  Divider,
   EditorButton,
   IconAlignCenter,
   IconAlignLeft,
@@ -7,9 +8,9 @@ import {
   IconInsertColAfter,
   IconInsertColBefore,
   IconMore,
+  Popover,
 } from '@/components';
 import { useEditor } from '@/contexts';
-import { Divider, Popover } from '@douyinfe/semi-ui';
 import type { LexicalEditor } from 'lexical';
 import type { AlignType } from 'mdast';
 import type { FC } from 'react';
@@ -67,7 +68,6 @@ export const ColumnEditor: FC<ColumnEditorProps> = ({
     <Popover
       trigger="click"
       position="top"
-      showArrow
       className="dme-table-menu"
       contentClassName="dme-table-menu-content"
       content={

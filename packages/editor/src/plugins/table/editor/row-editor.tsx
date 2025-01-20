@@ -1,6 +1,5 @@
-import { EditorButton, IconDelete, IconInsertRowAfter, IconInsertRowBefore, IconMore } from '@/components';
+import { EditorButton, IconDelete, IconInsertRowAfter, IconInsertRowBefore, IconMore, Popover } from '@/components';
 import { useEditor } from '@/contexts';
-import { Popover } from '@douyinfe/semi-ui';
 import type { LexicalEditor } from 'lexical';
 import type { FC } from 'react';
 import { useCallback } from 'react';
@@ -46,7 +45,6 @@ export const RowEditor: FC<RowEditorProps> = ({
     <Popover
       trigger="click"
       position="right"
-      showArrow
       className="dme-table-menu"
       contentClassName="dme-table-menu-content"
       content={
