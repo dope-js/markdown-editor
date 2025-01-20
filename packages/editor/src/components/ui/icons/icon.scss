@@ -8,15 +8,15 @@
   fill: currentColor;
 
   &.dme-icon-small {
-    font-size: var(--width-icon_small);
+    font-size: var(--dme-width-icon_small);
   }
 
   &.dme-icon-default {
-    font-size: var(--width-icon_default);
+    font-size: var(--dme-width-icon_default);
   }
 
   &.dme-icon-spinning {
-    animation: var(--motion-icon_spin-animationDuration) linear infinite dme-icon-animation-rotate;
+    animation: var(--dme-motion-icon_spin-animationDuration) linear infinite dme-icon-animation-rotate;
     animation-fill-mode: forwards;
   }
 }

@@ -1,7 +1,7 @@
 .wrapper {
   margin: 1em 0;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-medium);
+  border: 1px solid var(--dme-color-border);
+  border-radius: var(--dme-border-radius-medium);
   overflow: hidden;
   padding: 0.8rem;
   position: relative;
@@ -15,24 +15,24 @@
     padding: 4px;
     z-index: 1;
     align-items: center;
-    border-bottom-left-radius: var(--border-radius-medium);
-    background-color: rgb(var(--grey-0));
+    border-bottom-left-radius: var(--dme-border-radius-medium);
+    background-color: rgb(var(--dme-grey-0));
   }
 
   :global {
     .cm-editor {
-      --sp-font-mono: var(--font-mono);
-      --sp-font-body: var(--font-default);
+      --sp-font-mono: var(--dme-font-mono);
+      --sp-font-body: var(--dme-font-default);
       padding: var(--sp-space-4) 0;
-      background-color: var(--color-bg-1);
+      background-color: var(--dme-color-bg-1);
     }
 
     .cm-activeLineGutter {
-      background-color: var(--color-fill-0);
+      background-color: var(--dme-color-fill-0);
     }
 
     .cm-gutters {
-      border-right: solid 1px var(--color-border);
+      border-right: solid 1px var(--dme-color-border);
     }
 
     .sp-editor .cm-editor {
@@ -41,7 +41,7 @@
 
     .cm-scroller {
       padding: 0 !important;
-      font-family: var(--font-mono);
+      font-family: var(--dme-font-mono);
       font-size: 13px;
     }
 
@@ -68,14 +68,14 @@
 
     /** Diff viewer */
     .cm-mergeView .cm-scroller {
-      font-family: var(--font-mono);
+      font-family: var(--dme-font-mono);
       line-height: 1.3rem;
       font-size: 0.75rem;
     }
 
     /** Diff viewer */
     .cm-sourceView .cm-scroller {
-      font-family: var(--font-mono);
+      font-family: var(--dme-font-mono);
       line-height: 1.3rem;
       font-size: 0.75rem;
     }
@@ -90,12 +90,12 @@
     }
 
     .cm-tooltip-autocomplete {
-      background: var(--color-bg-2);
-      border-radius: var(--border-radius-medium);
+      background: var(--dme-color-bg-2);
+      border-radius: var(--dme-border-radius-medium);
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       font-size: 12px;
-      color: var(--color-text-0);
+      color: var(--dme-color-text-0);
 
       ul[role='listbox'] {
         margin: 0 !important;
@@ -106,7 +106,7 @@
           padding: 4px;
 
           &[aria-selected='true'] {
-            background-color: var(--color-fill-0);
+            background-color: var(--dme-color-fill-0);
           }
 
           .cm-completionIcon {
@@ -114,13 +114,13 @@
           }
 
           .cm-completionMatchedText {
-            background-color: var(--color-highlight-bg);
+            background-color: var(--dme-color-highlight-bg);
             text-decoration: none;
             font-weight: 600;
           }
 
           .cm-completionDetail {
-            color: var(--color-text-3);
+            color: var(--dme-color-text-3);
           }
         }
       }
@@ -133,11 +133,11 @@
   }
 
   & .cm-activeLineGutter {
-    background-color: var(--color-fill-0);
+    background-color: var(--dme-color-fill-0);
   }
 
   & .cm-gutters {
-    border-right: solid 1px var(--color-border);
+    border-right: solid 1px var(--dme-color-border);
   }
 
   & .sp-editor .cm-editor {
@@ -146,7 +146,7 @@
 
   & .cm-scroller {
     padding: 0 !important;
-    font-family: var(--font-mono);
+    font-family: var(--dme-font-mono);
     font-size: 13px;
   }
 
@@ -173,14 +173,14 @@
 
   /** Diff viewer */
   & .cm-mergeView .cm-scroller {
-    font-family: var(--font-mono);
+    font-family: var(--dme-font-mono);
     line-height: 1.3rem;
     font-size: 0.75rem;
   }
 
   /** Diff viewer */
   & .cm-sourceView .cm-scroller {
-    font-family: var(--font-mono);
+    font-family: var(--dme-font-mono);
     line-height: 1.3rem;
     font-size: 0.75rem;
   }
@@ -195,7 +195,7 @@
   }
 
   & .cm-tooltip-autocomplete {
-    background: var(--color-bg-2);
+    background: var(--dme-color-bg-2);
   }
 
   & .cm-gutterElement {
@@ -204,6 +204,6 @@
   }
 
   hr[data-lexical-decorator='true'].selected {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--dme-color-primary);
   }
 }

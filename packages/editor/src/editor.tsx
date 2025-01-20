@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 import type { Options as ToMarkdownOptions } from 'mdast-util-to-markdown';
-import { forwardRef, useEffect, useMemo } from 'react';
+import { forwardRef, useMemo } from 'react';
 import { LexicalProvider, Methods, EditorWrapper, RichTextEditor } from './components';
 import { EditorProvider } from './contexts';
 import type { CodeBlockEditorDescriptor } from './plugins';
@@ -54,13 +54,13 @@ const PlainTextCodeEditorDescriptor: CodeBlockEditorDescriptor = {
   },
 };
 
-export const MDXEditor = forwardRef<EditorMethods, EditorProps>((props, ref) => {
+export const MDXEditor = forwardRef<EditorMethods, EditorProps>(({ showToolbar = true, ...props }, ref) => {
   const plugins: EditorPlugin[] = useMemo(() => {
     const plugins: EditorPlugin[] = [
       corePlugin({
         contentEditableClassName: 'mdxeditor-content',
         spellCheck: props.spellCheck ?? true,
-        initialMarkdown: props.markdown ?? '',
+        initialValue: props.value ?? '',
         onChange: props.onChange ?? noop,
         onBlur: props.onBlur ?? noop,
         toMarkdownOptions: props.toMarkdownOptions ?? defaultMarkdownOptions,
@@ -85,18 +85,15 @@ export const MDXEditor = forwardRef<EditorMethods, EditorProps>((props, ref) => 
       markdownShortcutPlugin(),
     ];
 
-    if (props.showToolbar) plugins.push(toolbarPlugin());
+    if (showToolbar) plugins.push(toolbarPlugin());
 
     return plugins;
-  }, [props.showToolbar]);
-  useEffect(() => {
-    console.log(props);
-  }, [props]);
+  }, [showToolbar]);
 
   return (
     <EditorProvider editorProps={props}>
       <EditorWrapper plugins={plugins}>
-        <div className={clsx('mdxeditor', { dark: props.dark }, props.className)}>
+        <div className={clsx('mdxeditor', { 'dme-dark': props.dark }, props.className)}>
           <LexicalProvider>
             <RichTextEditor />
           </LexicalProvider>

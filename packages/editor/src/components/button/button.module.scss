@@ -1,22 +1,22 @@
 .minor {
   :global(.dme-button-content) {
-    color: rgba(var(--grey-2), 1);
+    color: rgba(var(--dme-grey-2), 1);
   }
 
   &:hover {
-    color: var(--color-text-1);
+    color: var(--dme-color-text-1);
 
     :global(.dme-button-content) {
-      color: var(--color-text-1);
+      color: var(--dme-color-text-1);
     }
   }
 
   &:active {
-    color: var(--color-text-1);
-    background-color: var(--color-tertiary-active);
+    color: var(--dme-color-text-1);
+    background-color: var(--dme-color-tertiary-active);
 
     :global(.dme-button-content) {
-      color: var(--color-text-1);
+      color: var(--dme-color-text-1);
     }
   }
 }

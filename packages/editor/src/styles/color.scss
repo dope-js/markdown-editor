@@ -1,181 +1,181 @@
 @import './palette.scss';
 
-.mdxeditor {
-  --color-black: rgba(var(--black), 1);
-  --color-white: rgba(var(--white), 1);
+body {
+  --dme-color-black: rgba(var(--dme-black), 1);
+  --dme-color-white: rgba(var(--dme-white), 1);
 
-  --color-bg-0: rgba(var(--white), 1);
-  --color-bg-1: rgba(var(--white), 1);
-  --color-bg-2: rgba(var(--white), 1);
-  --color-bg-3: rgba(var(--white), 1);
-  --color-bg-4: rgba(var(--white), 1);
+  --dme-color-bg-0: rgba(var(--dme-white), 1);
+  --dme-color-bg-1: rgba(var(--dme-white), 1);
+  --dme-color-bg-2: rgba(var(--dme-white), 1);
+  --dme-color-bg-3: rgba(var(--dme-white), 1);
+  --dme-color-bg-4: rgba(var(--dme-white), 1);
 
-  --color-link: rgba(var(--brand-5), 1);
-  --color-link-hover: rgba(var(--brand-6), 1);
-  --color-link-active: rgba(var(--brand-7), 1);
-  --color-link-visited: rgba(var(--brand-5), 1);
+  --dme-color-link: rgba(var(--dme-brand-5), 1);
+  --dme-color-link-hover: rgba(var(--dme-brand-6), 1);
+  --dme-color-link-active: rgba(var(--dme-brand-7), 1);
+  --dme-color-link-visited: rgba(var(--dme-brand-5), 1);
 
-  --color-fill-0: rgba(var(--grey-8), 0.05);
-  --color-fill-1: rgba(var(--grey-8), 0.09);
-  --color-fill-2: rgba(var(--grey-8), 0.13);
+  --dme-color-fill-0: rgba(var(--dme-grey-8), 0.05);
+  --dme-color-fill-1: rgba(var(--dme-grey-8), 0.09);
+  --dme-color-fill-2: rgba(var(--dme-grey-8), 0.13);
 
-  --color-text-0: rgba(var(--grey-9), 1);
-  --color-text-1: rgba(var(--grey-9), 0.8);
-  --color-text-2: rgba(var(--grey-9), 0.6);
-  --color-text-3: rgba(var(--grey-9), 0.35);
+  --dme-color-text-0: rgba(var(--dme-grey-9), 1);
+  --dme-color-text-1: rgba(var(--dme-grey-9), 0.8);
+  --dme-color-text-2: rgba(var(--dme-grey-9), 0.6);
+  --dme-color-text-3: rgba(var(--dme-grey-9), 0.35);
 
-  --color-border: rgba(var(--grey-9), 0.08);
-  --color-shadow: rgba(var(--black), 0.04);
+  --dme-color-border: rgba(var(--dme-grey-9), 0.08);
+  --dme-color-shadow: rgba(var(--dme-black), 0.04);
 
-  --color-default: rgba(var(--grey-0), 1);
-  --color-default-hover: rgba(var(--grey-1), 1);
-  --color-default-active: rgba(var(--grey-2), 1);
+  --dme-color-default: rgba(var(--dme-grey-0), 1);
+  --dme-color-default-hover: rgba(var(--dme-grey-1), 1);
+  --dme-color-default-active: rgba(var(--dme-grey-2), 1);
 
-  --color-primary: rgba(var(--brand-5), 1);
-  --color-primary-hover: rgba(var(--brand-6), 1);
-  --color-primary-active: rgba(var(--brand-7), 1);
-  --color-primary-disabled: rgba(var(--brand-2), 1);
-  --color-primary-light-hover: rgba(var(--brand-1), 1);
-  --color-primary-light-active: rgba(var(--brand-2), 1);
-  --color-primary-light-default: rgba(var(--brand-0), 1);
+  --dme-color-primary: rgba(var(--dme-brand-5), 1);
+  --dme-color-primary-hover: rgba(var(--dme-brand-6), 1);
+  --dme-color-primary-active: rgba(var(--dme-brand-7), 1);
+  --dme-color-primary-disabled: rgba(var(--dme-brand-2), 1);
+  --dme-color-primary-light-hover: rgba(var(--dme-brand-1), 1);
+  --dme-color-primary-light-active: rgba(var(--dme-brand-2), 1);
+  --dme-color-primary-light-default: rgba(var(--dme-brand-0), 1);
 
-  --color-secondary: rgba(var(--light-blue-5), 1);
-  --color-secondary-hover: rgba(var(--light-blue-6), 1);
-  --color-secondary-active: rgba(var(--light-blue-7), 1);
-  --color-secondary-disabled: rgba(var(--light-blue-2), 1);
-  --color-secondary-light-hover: rgba(var(--blue-1), 1);
-  --color-secondary-light-active: rgba(var(--blue-2), 1);
-  --color-secondary-light-default: rgba(var(--light-blue-0), 1);
+  --dme-color-secondary: rgba(var(--dme-light-blue-5), 1);
+  --dme-color-secondary-hover: rgba(var(--dme-light-blue-6), 1);
+  --dme-color-secondary-active: rgba(var(--dme-light-blue-7), 1);
+  --dme-color-secondary-disabled: rgba(var(--dme-light-blue-2), 1);
+  --dme-color-secondary-light-hover: rgba(var(--dme-blue-1), 1);
+  --dme-color-secondary-light-active: rgba(var(--dme-blue-2), 1);
+  --dme-color-secondary-light-default: rgba(var(--dme-light-blue-0), 1);
 
-  --color-tertiary: rgba(var(--grey-5), 1);
-  --color-tertiary-hover: rgba(var(--grey-6), 1);
-  --color-tertiary-active: rgba(var(--grey-7), 1);
-  --color-tertiary-light-hover: rgba(var(--grey-1), 1);
-  --color-tertiary-light-active: rgba(var(--grey-2), 1);
-  --color-tertiary-light-default: rgba(var(--grey-0), 1);
+  --dme-color-tertiary: rgba(var(--dme-grey-5), 1);
+  --dme-color-tertiary-hover: rgba(var(--dme-grey-6), 1);
+  --dme-color-tertiary-active: rgba(var(--dme-grey-7), 1);
+  --dme-color-tertiary-light-hover: rgba(var(--dme-grey-1), 1);
+  --dme-color-tertiary-light-active: rgba(var(--dme-grey-2), 1);
+  --dme-color-tertiary-light-default: rgba(var(--dme-grey-0), 1);
 
-  --color-info: rgba(var(--brand-5), 1);
-  --color-info-hover: rgba(var(--brand-6), 1);
-  --color-info-active: rgba(var(--brand-7), 1);
-  --color-info-disabled: rgba(var(--brand-2), 1);
-  --color-info-light-hover: rgba(var(--blue-1), 1);
-  --color-info-light-active: rgba(var(--blue-2), 1);
-  --color-info-light-default: rgba(var(--blue-0), 1);
+  --dme-color-info: rgba(var(--dme-brand-5), 1);
+  --dme-color-info-hover: rgba(var(--dme-brand-6), 1);
+  --dme-color-info-active: rgba(var(--dme-brand-7), 1);
+  --dme-color-info-disabled: rgba(var(--dme-brand-2), 1);
+  --dme-color-info-light-hover: rgba(var(--dme-blue-1), 1);
+  --dme-color-info-light-active: rgba(var(--dme-blue-2), 1);
+  --dme-color-info-light-default: rgba(var(--dme-blue-0), 1);
 
-  --color-success: rgba(var(--green-5), 1);
-  --color-success-hover: rgba(var(--green-6), 1);
-  --color-success-active: rgba(var(--green-7), 1);
-  --color-success-disabled: rgba(var(--green-2), 1);
-  --color-success-light-hover: rgba(var(--green-1), 1);
-  --color-success-light-active: rgba(var(--green-2), 1);
-  --color-success-light-default: rgba(var(--green-0), 1);
+  --dme-color-success: rgba(var(--dme-green-5), 1);
+  --dme-color-success-hover: rgba(var(--dme-green-6), 1);
+  --dme-color-success-active: rgba(var(--dme-green-7), 1);
+  --dme-color-success-disabled: rgba(var(--dme-green-2), 1);
+  --dme-color-success-light-hover: rgba(var(--dme-green-1), 1);
+  --dme-color-success-light-active: rgba(var(--dme-green-2), 1);
+  --dme-color-success-light-default: rgba(var(--dme-green-0), 1);
 
-  --color-warning: rgba(var(--orange-5), 1);
-  --color-warning-hover: rgba(var(--orange-6), 1);
-  --color-warning-active: rgba(var(--orange-7), 1);
-  --color-warning-light-hover: rgba(var(--orange-1), 1);
-  --color-warning-light-active: rgba(var(--orange-2), 1);
-  --color-warning-light-default: rgba(var(--orange-0), 1);
+  --dme-color-warning: rgba(var(--dme-orange-5), 1);
+  --dme-color-warning-hover: rgba(var(--dme-orange-6), 1);
+  --dme-color-warning-active: rgba(var(--dme-orange-7), 1);
+  --dme-color-warning-light-hover: rgba(var(--dme-orange-1), 1);
+  --dme-color-warning-light-active: rgba(var(--dme-orange-2), 1);
+  --dme-color-warning-light-default: rgba(var(--dme-orange-0), 1);
 
-  --color-danger: rgba(var(--red-5), 1);
-  --color-danger-hover: rgba(var(--red-6), 1);
-  --color-danger-active: rgba(var(--red-7), 1);
-  --color-danger-light-hover: rgba(var(--red-1), 1);
-  --color-danger-light-active: rgba(var(--red-2), 1);
-  --color-danger-light-default: rgba(var(--red-0), 1);
+  --dme-color-danger: rgba(var(--dme-red-5), 1);
+  --dme-color-danger-hover: rgba(var(--dme-red-6), 1);
+  --dme-color-danger-active: rgba(var(--dme-red-7), 1);
+  --dme-color-danger-light-hover: rgba(var(--dme-red-1), 1);
+  --dme-color-danger-light-active: rgba(var(--dme-red-2), 1);
+  --dme-color-danger-light-default: rgba(var(--dme-red-0), 1);
 
-  --color-disabled-bg: rgba(var(--grey-1), 1);
-  --color-disabled-fill: rgba(var(--grey-8), 0.04);
-  --color-disabled-text: rgba(var(--grey-9), 0.35);
-  --color-disabled-border: rgba(var(--grey-1), 1);
+  --dme-color-disabled-bg: rgba(var(--dme-grey-1), 1);
+  --dme-color-disabled-fill: rgba(var(--dme-grey-8), 0.04);
+  --dme-color-disabled-text: rgba(var(--dme-grey-9), 0.35);
+  --dme-color-disabled-border: rgba(var(--dme-grey-1), 1);
 
-  &.dark {
-    --color-black: rgba(var(--black), 1);
-    --color-white: rgba(228, 231, 245, 1);
+  .dme-dark {
+    --dme-color-black: rgba(var(--dme-black), 1);
+    --dme-color-white: rgba(228, 231, 245, 1);
 
-    --color-bg-0: rgba(22, 22, 26, 1);
-    --color-bg-1: rgba(35, 36, 41, 1);
-    --color-bg-2: rgba(53, 54, 60, 1);
-    --color-bg-3: rgba(67, 68, 74, 1);
-    --color-bg-4: rgba(79, 81, 89, 1);
+    --dme-color-bg-0: rgba(22, 22, 26, 1);
+    --dme-color-bg-1: rgba(35, 36, 41, 1);
+    --dme-color-bg-2: rgba(53, 54, 60, 1);
+    --dme-color-bg-3: rgba(67, 68, 74, 1);
+    --dme-color-bg-4: rgba(79, 81, 89, 1);
 
-    --color-link: rgba(var(--blue-5), 1);
-    --color-link-hover: rgba(var(--blue-6), 1);
-    --color-link-active: rgba(var(--blue-7), 1);
-    --color-link-visited: rgba(var(--blue-5), 1);
+    --dme-color-link: rgba(var(--dme-blue-5), 1);
+    --dme-color-link-hover: rgba(var(--dme-blue-6), 1);
+    --dme-color-link-active: rgba(var(--dme-blue-7), 1);
+    --dme-color-link-visited: rgba(var(--dme-blue-5), 1);
 
-    --color-fill-0: rgba(var(--white), 0.05);
-    --color-fill-1: rgba(var(--white), 0.09);
-    --color-fill-2: rgba(var(--white), 0.13);
+    --dme-color-fill-0: rgba(var(--dme-white), 0.05);
+    --dme-color-fill-1: rgba(var(--dme-white), 0.09);
+    --dme-color-fill-2: rgba(var(--dme-white), 0.13);
 
-    --color-text-0: rgba(var(--grey-9), 1);
-    --color-text-1: rgba(var(--grey-9), 0.8);
-    --color-text-2: rgba(var(--grey-9), 0.6);
-    --color-text-3: rgba(var(--grey-9), 0.35);
+    --dme-color-text-0: rgba(var(--dme-grey-9), 1);
+    --dme-color-text-1: rgba(var(--dme-grey-9), 0.8);
+    --dme-color-text-2: rgba(var(--dme-grey-9), 0.6);
+    --dme-color-text-3: rgba(var(--dme-grey-9), 0.35);
 
-    --color-border: rgba(var(--white), 0.08);
-    --color-shadow: rgba(var(--black), 0.04);
+    --dme-color-border: rgba(var(--dme-white), 0.08);
+    --dme-color-shadow: rgba(var(--dme-black), 0.04);
 
-    --color-default: rgba(var(--grey-0), 1);
-    --color-default-hover: rgba(var(--grey-1), 1);
-    --color-default-active: rgba(var(--grey-2), 1);
+    --dme-color-default: rgba(var(--dme-grey-0), 1);
+    --dme-color-default-hover: rgba(var(--dme-grey-1), 1);
+    --dme-color-default-active: rgba(var(--dme-grey-2), 1);
 
-    --color-primary: rgba(var(--blue-5), 1);
-    --color-primary-hover: rgba(var(--blue-6), 1);
-    --color-primary-active: rgba(var(--blue-7), 1);
-    --color-primary-disabled: rgba(var(--blue-2), 1);
-    --color-primary-light-hover: rgba(var(--brand-5), 0.3);
-    --color-primary-light-active: rgba(var(--brand-5), 0.4);
-    --color-primary-light-default: rgba(var(--brand-5), 0.2);
+    --dme-color-primary: rgba(var(--dme-blue-5), 1);
+    --dme-color-primary-hover: rgba(var(--dme-blue-6), 1);
+    --dme-color-primary-active: rgba(var(--dme-blue-7), 1);
+    --dme-color-primary-disabled: rgba(var(--dme-blue-2), 1);
+    --dme-color-primary-light-hover: rgba(var(--dme-brand-5), 0.3);
+    --dme-color-primary-light-active: rgba(var(--dme-brand-5), 0.4);
+    --dme-color-primary-light-default: rgba(var(--dme-brand-5), 0.2);
 
-    --color-secondary: rgba(var(--light-blue-5), 1);
-    --color-secondary-hover: rgba(var(--light-blue-6), 1);
-    --color-secondary-active: rgba(var(--light-blue-7), 1);
-    --color-secondary-disabled: rgba(var(--light-blue-2), 1);
-    --color-secondary-light-hover: rgba(var(--light-blue-5), 0.3);
-    --color-secondary-light-active: rgba(var(--light-blue-5), 0.4);
-    --color-secondary-light-default: rgba(var(--light-blue-5), 0.2);
+    --dme-color-secondary: rgba(var(--dme-light-blue-5), 1);
+    --dme-color-secondary-hover: rgba(var(--dme-light-blue-6), 1);
+    --dme-color-secondary-active: rgba(var(--dme-light-blue-7), 1);
+    --dme-color-secondary-disabled: rgba(var(--dme-light-blue-2), 1);
+    --dme-color-secondary-light-hover: rgba(var(--dme-light-blue-5), 0.3);
+    --dme-color-secondary-light-active: rgba(var(--dme-light-blue-5), 0.4);
+    --dme-color-secondary-light-default: rgba(var(--dme-light-blue-5), 0.2);
 
-    --color-tertiary: rgba(var(--grey-5), 1);
-    --color-tertiary-hover: rgba(var(--grey-6), 1);
-    --color-tertiary-active: rgba(var(--grey-7), 1);
-    --color-tertiary-light-hover: rgba(var(--grey-5), 0.3);
-    --color-tertiary-light-active: rgba(var(--grey-5), 0.4);
-    --color-tertiary-light-default: rgba(var(--grey-5), 0.2);
+    --dme-color-tertiary: rgba(var(--dme-grey-5), 1);
+    --dme-color-tertiary-hover: rgba(var(--dme-grey-6), 1);
+    --dme-color-tertiary-active: rgba(var(--dme-grey-7), 1);
+    --dme-color-tertiary-light-hover: rgba(var(--dme-grey-5), 0.3);
+    --dme-color-tertiary-light-active: rgba(var(--dme-grey-5), 0.4);
+    --dme-color-tertiary-light-default: rgba(var(--dme-grey-5), 0.2);
 
-    --color-info: rgba(var(--blue-5), 1);
-    --color-info-hover: rgba(var(--blue-6), 1);
-    --color-info-active: rgba(var(--blue-7), 1);
-    --color-info-disabled: rgba(var(--blue-2), 1);
-    --color-info-light-hover: rgba(var(--blue-5), 0.3);
-    --color-info-light-active: rgba(var(--blue-5), 0.4);
-    --color-info-light-default: rgba(var(--blue-5), 0.2);
+    --dme-color-info: rgba(var(--dme-blue-5), 1);
+    --dme-color-info-hover: rgba(var(--dme-blue-6), 1);
+    --dme-color-info-active: rgba(var(--dme-blue-7), 1);
+    --dme-color-info-disabled: rgba(var(--dme-blue-2), 1);
+    --dme-color-info-light-hover: rgba(var(--dme-blue-5), 0.3);
+    --dme-color-info-light-active: rgba(var(--dme-blue-5), 0.4);
+    --dme-color-info-light-default: rgba(var(--dme-blue-5), 0.2);
 
-    --color-success: rgba(var(--green-5), 1);
-    --color-success-hover: rgba(var(--green-6), 1);
-    --color-success-active: rgba(var(--green-7), 1);
-    --color-success-disabled: rgba(var(--green-2), 1);
-    --color-success-light-hover: rgba(var(--green-5), 0.3);
-    --color-success-light-active: rgba(var(--green-5), 0.4);
-    --color-success-light-default: rgba(var(--green-5), 0.2);
+    --dme-color-success: rgba(var(--dme-green-5), 1);
+    --dme-color-success-hover: rgba(var(--dme-green-6), 1);
+    --dme-color-success-active: rgba(var(--dme-green-7), 1);
+    --dme-color-success-disabled: rgba(var(--dme-green-2), 1);
+    --dme-color-success-light-hover: rgba(var(--dme-green-5), 0.3);
+    --dme-color-success-light-active: rgba(var(--dme-green-5), 0.4);
+    --dme-color-success-light-default: rgba(var(--dme-green-5), 0.2);
 
-    --color-warning: rgba(var(--orange-5), 1);
-    --color-warning-hover: rgba(var(--orange-6), 1);
-    --color-warning-active: rgba(var(--orange-7), 1);
-    --color-warning-light-hover: rgba(var(--orange-5), 0.3);
-    --color-warning-light-active: rgba(var(--orange-5), 0.4);
-    --color-warning-light-default: rgba(var(--orange-5), 0.2);
+    --dme-color-warning: rgba(var(--dme-orange-5), 1);
+    --dme-color-warning-hover: rgba(var(--dme-orange-6), 1);
+    --dme-color-warning-active: rgba(var(--dme-orange-7), 1);
+    --dme-color-warning-light-hover: rgba(var(--dme-orange-5), 0.3);
+    --dme-color-warning-light-active: rgba(var(--dme-orange-5), 0.4);
+    --dme-color-warning-light-default: rgba(var(--dme-orange-5), 0.2);
 
-    --color-danger: rgba(var(--red-5), 1);
-    --color-danger-hover: rgba(var(--red-6), 1);
-    --color-danger-active: rgba(var(--red-7), 1);
-    --color-danger-light-hover: rgba(var(--red-5), 0.3);
-    --color-danger-light-active: rgba(var(--red-5), 0.4);
-    --color-danger-light-default: rgba(var(--red-5), 0.2);
+    --dme-color-danger: rgba(var(--dme-red-5), 1);
+    --dme-color-danger-hover: rgba(var(--dme-red-6), 1);
+    --dme-color-danger-active: rgba(var(--dme-red-7), 1);
+    --dme-color-danger-light-hover: rgba(var(--dme-red-5), 0.3);
+    --dme-color-danger-light-active: rgba(var(--dme-red-5), 0.4);
+    --dme-color-danger-light-default: rgba(var(--dme-red-5), 0.2);
 
-    --color-disabled-bg: rgba(var(--grey-1), 1);
-    --color-disabled-fill: rgba(var(--grey-8), 0.04);
-    --color-disabled-text: rgba(var(--grey-9), 0.35);
-    --color-disabled-border: rgba(var(--grey-1), 1);
+    --dme-color-disabled-bg: rgba(var(--dme-grey-1), 1);
+    --dme-color-disabled-fill: rgba(var(--dme-grey-8), 0.04);
+    --dme-color-disabled-text: rgba(var(--dme-grey-9), 0.35);
+    --dme-color-disabled-border: rgba(var(--dme-grey-1), 1);
   }
 }

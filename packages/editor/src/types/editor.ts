@@ -7,12 +7,12 @@ export interface EditorMethods {
   /**
    * Gets the current markdown value.
    */
-  getMarkdown: () => string;
+  getValue: () => string;
 
   /**
    * Updates the markdown value of the editor.
    */
-  setMarkdown: (value: string) => void;
+  setValue: (value: string) => void;
 
   /**
    * Inserts markdown at the current cursor position. Use the focus if necessary.
@@ -44,9 +44,9 @@ export interface EditorProps {
   spellCheck?: boolean;
   /**
    * The markdown to edit. Notice that this is read only when the component is mounted.
-   * To change the component content dynamically, use the `MDXEditorMethods.setMarkdown` method.
+   * To change the component content dynamically, use the `MDXEditorMethods.setValue` method.
    */
-  markdown?: string;
+  value?: string;
   /**
    * Triggered when the editor value changes. The callback is not throttled, you can use any throttling mechanism
    * if you intend to do auto-saving.
@@ -97,9 +97,9 @@ export interface EditorProps {
 
   dark?: boolean;
 
-  imageUploadUrl: string;
+  imageUploadUrl?: string;
   imageUploadHeaders?: Record<string, string>;
-  imageUploadResponseHandler: (res: AxiosResponse) => string | { message: string };
+  imageUploadResponseHandler?: (res: AxiosResponse) => string | { message: string };
 
-  locale: 'zh-CN' | 'en-US';
+  locale?: 'zh-CN' | 'en-US';
 }

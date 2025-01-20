@@ -45,6 +45,7 @@
     "@codemirror/state": "^6.5.1",
     "@codemirror/view": "^6.36.2",
     "@douyinfe/semi-ui": "^2.73.0",
+    "@floating-ui/react": "^0.27.3",
     "@lexical/list": "^0.23.1",
     "@lexical/markdown": "^0.23.1",
     "@lexical/react": "^0.23.1",

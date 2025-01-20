@@ -1,40 +1,40 @@
 @import './color.scss';
 
-.mdxeditor {
-  --font-default: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+body {
+  --dme-font-default: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --dme-font-mono: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
-  --width-icon_small: 12px;
-  --width-icon_default: 16px;
-  --motion-icon_spin-animationDuration: 0.6s;
+  --dme-width-icon_small: 12px;
+  --dme-width-icon_default: 16px;
+  --dme-motion-icon_spin-animationDuration: 0.6s;
 
-  --font-size-regular: 14px;
+  --dme-font-size-regular: 14px;
 
-  --font-weight-light: 200;
-  --font-weight-regular: 400;
-  --font-weight-bold: 600;
+  --dme-font-weight-light: 200;
+  --dme-font-weight-regular: 400;
+  --dme-font-weight-bold: 600;
 
-  --height-control-small: 24px;
-  --height-control-default: 32px;
-  --height-control-large: 32px;
+  --dme-height-control-small: 24px;
+  --dme-height-control-default: 32px;
+  --dme-height-control-large: 32px;
 
-  --border-thinkness: 0;
+  --dme-border-thinkness: 0;
 
-  --border-radius-small: 3px;
-  --border-radius-medium: 6px;
-  --border-radius-large: 12px;
-  --border-radius-circle: 50%;
-  --border-radius-full: 9999px;
+  --dme-border-radius-small: 3px;
+  --dme-border-radius-medium: 6px;
+  --dme-border-radius-large: 12px;
+  --dme-border-radius-circle: 50%;
+  --dme-border-radius-full: 9999px;
 
-  --spacing-none: 0;
-  --spacing-super-tight: 2px;
-  --spacing-extra-tight: 4px;
-  --spacing-tight: 8px;
-  --spacing-base-tight: 12px;
-  --spacing-base: 16px;
-  --spacing-base-loose: 20px;
-  --spacing-loose: 24px;
-  --spacing-extra-loose: 32px;
-  --spacing-super-loose: 40px;
+  --dme-spacing-none: 0;
+  --dme-spacing-super-tight: 2px;
+  --dme-spacing-extra-tight: 4px;
+  --dme-spacing-tight: 8px;
+  --dme-spacing-base-tight: 12px;
+  --dme-spacing-base: 16px;
+  --dme-spacing-base-loose: 20px;
+  --dme-spacing-loose: 24px;
+  --dme-spacing-extra-loose: 32px;
+  --dme-spacing-super-loose: 40px;
 }

@@ -1,5 +1,5 @@
 @mixin font-size-regular {
-  font-size: var(--font-size-regular);
+  font-size: var(--dme-font-size-regular);
   line-height: 20px;
-  font-family: var(--font-default);
+  font-family: var(--dme-font-default);
 }

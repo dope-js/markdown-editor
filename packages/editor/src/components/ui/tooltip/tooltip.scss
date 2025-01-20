@@ -1,0 +1,24 @@
+.dme-tooltip {
+  background-color: rgba(var(--dme-grey-7), 1);
+  padding: 8px 12px;
+  border-radius: 3px;
+  z-index: 1000;
+  position: relative;
+
+  .dme-tooltip-content {
+    color: var(--dme-color-bg-0);
+    font-size: 12px;
+    display: block;
+  }
+
+  .demi-tooltip-arrow {
+    position: absolute;
+    width: 24px;
+    height: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -6px;
+    fill: rgba(var(--dme-grey-7), 1);
+    color: rgba(var(--dme-grey-7), 1);
+  }
+}

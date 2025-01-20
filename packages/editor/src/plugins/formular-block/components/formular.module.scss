@@ -7,19 +7,19 @@
     position: relative;
     padding: 12px 0;
     user-select: none;
-    border-radius: var(--border-radius-medium);
+    border-radius: var(--dme-border-radius-medium);
 
     &:hover {
-      background-color: var(--color-fill-0);
+      background-color: var(--dme-color-fill-0);
     }
 
     &.selected {
-      background-color: var(--color-fill-0);
+      background-color: var(--dme-color-fill-0);
     }
 
     .empty {
       font-style: italic;
-      color: var(--color-text-3);
+      color: var(--dme-color-text-3);
     }
   }
 }

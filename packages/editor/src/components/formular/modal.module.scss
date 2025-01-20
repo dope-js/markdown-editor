@@ -4,12 +4,12 @@
   gap: 8px;
 
   .input {
-    font-family: var(--font-mono);
+    font-family: var(--dme-font-mono);
     word-break: break-all;
-    outline: solid 1px var(--color-primary);
+    outline: solid 1px var(--dme-color-primary);
 
     :global(.dme-input-textarea) {
-      font-family: var(--font-mono);
+      font-family: var(--dme-font-mono);
       line-height: 150%;
       font-size: 14px;
     }
@@ -22,8 +22,8 @@
   }
 
   .error {
-    color: var(--color-danger);
-    font-family: var(--font-mono);
+    color: var(--dme-color-danger);
+    font-family: var(--dme-font-mono);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -37,8 +37,8 @@
     .message {
       font-size: 12px;
       padding: 4px;
-      background-color: var(--color-fill-0);
-      border-radius: var(--border-radius-medium);
+      background-color: var(--dme-color-fill-0);
+      border-radius: var(--dme-border-radius-medium);
     }
   }
 }

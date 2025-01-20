@@ -1,6 +1,6 @@
-import { TextArea } from '@douyinfe/semi-ui';
+import { Textarea } from '@/components';
 import type { FC } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { InlineMath } from 'react-katex';
 import styles from './formular.module.scss';
 
@@ -13,13 +13,13 @@ interface IFormularEditorProps {
 export const FormularEditor: FC<IFormularEditorProps> = ({ math, onChange, autoFocus = false }) => {
   const [value, setValue] = useState(math);
   const first = useRef(false);
-  const ref = useRef<HTMLTextAreaElement | null>(null);
+  // const ref = useRef<HTMLTextAreaElement | null>(null);
 
-  useEffect(() => {
-    if (autoFocus && ref.current) {
-      ref.current.focus();
-    }
-  }, [autoFocus, ref.current]);
+  // useEffect(() => {
+  //   if (autoFocus && ref.current) {
+  //     ref.current.focus();
+  //   }
+  // }, [autoFocus, ref.current]);
 
   return (
     <div className={styles.editor}>
@@ -36,14 +36,14 @@ export const FormularEditor: FC<IFormularEditorProps> = ({ math, onChange, autoF
           />
         </div>
       )}
-      <TextArea
+      <Textarea
         autosize={{ minRows: 1, maxRows: 5 }}
         autoComplete="off"
         autoCorrect="off"
         autoCapitalize="off"
         data-1p-ignore
         className={styles.input}
-        ref={ref}
+        // ref={ref}
         value={value}
         defaultValue={math}
         onChange={setValue}

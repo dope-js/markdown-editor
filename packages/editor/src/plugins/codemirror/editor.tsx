@@ -1,9 +1,8 @@
-import { EditorButton, IconDelete } from '@/components';
+import { EditorButton, IconDelete, Select } from '@/components';
 import { useEditor } from '@/contexts';
 import { languages } from '@codemirror/language-data';
 import { EditorState } from '@codemirror/state';
 import { EditorView, lineNumbers } from '@codemirror/view';
-import { Select } from '@douyinfe/semi-ui';
 import { useCellValues } from '@mdxeditor/gurx';
 import { basicDark } from 'cm6-theme-basic-dark';
 import { basicLight } from 'cm6-theme-basic-light';
@@ -90,10 +89,7 @@ export const CodeMirrorEditor = ({ language, code }: CodeBlockEditorProps) => {
     >
       <div className={styles.toolbar}>
         <Select
-          size="small"
           value={language}
-          filter
-          style={{ minWidth: 120 }}
           onChange={(language) => {
             if (!(typeof language === 'string')) return;
 
@@ -106,7 +102,7 @@ export const CodeMirrorEditor = ({ language, code }: CodeBlockEditorProps) => {
               });
             });
           }}
-          optionList={Object.entries(codeBlockLanguages).map(([value, label]) => ({
+          options={Object.entries(codeBlockLanguages).map(([value, label]) => ({
             value: value ?? emptyValue,
             label,
           }))}

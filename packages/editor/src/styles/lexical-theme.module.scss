@@ -41,12 +41,12 @@
 }
 
 .code {
-  background-color: var(--color-fill-0);
+  background-color: var(--dme-color-fill-0);
   padding: 1px 0.2rem;
   margin: 0 0.25rem;
-  font-family: var(--font-mono);
+  font-family: var(--dme-font-mono);
   font-size: 94%;
-  border-radius: var(--border-radius-small);
+  border-radius: var(--dme-border-radius-small);
 }
 
 .nested-list-item {
@@ -86,7 +86,7 @@
   content: '';
   width: 1rem;
   height: 1rem;
-  border-radius: var(--border-radius-small);
+  border-radius: var(--dme-border-radius-small);
   top: 2px;
   left: 0;
   cursor: pointer;
@@ -102,19 +102,19 @@
 }
 
 .listItemUnchecked:before {
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--dme-color-border);
 }
 
 .listItemChecked:before {
-  border: 1px solid var(--color-border);
-  background-color: var(--color-primary);
+  border: 1px solid var(--dme-color-border);
+  background-color: var(--dme-color-primary);
   background-repeat: no-repeat;
 }
 
 .listItemChecked:after {
   content: '';
   cursor: pointer;
-  border-color: var(--color-white);
+  border-color: var(--dme-color-white);
   border-style: solid;
   position: absolute;
   display: block;
@@ -136,9 +136,9 @@
 }
 
 .mdxExpression {
-  font-family: var(--font-mono);
+  font-family: var(--dme-font-mono);
   font-size: 84%;
-  color: var(--accentText);
+  color: var(--dme-color-text-0);
 
   & input:focus-visible {
     outline: none;

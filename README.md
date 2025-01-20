@@ -6,6 +6,7 @@
 A wysiwyg markdown editor.
 
 ## Install
+
 ```bash
 # npm
 npm install @dope-js/markdown-editor
@@ -21,24 +22,20 @@ pnpm add @dope-js/markdown-editor
 
 ### Editor
 
-```typescript
-import { MDXEditor } from '@dopejs/markdown-editor'
+```tsx
+import { MDXEditor } from '@dopejs/markdown-editor';
 
 export default function Page() {
-  return (
-    <MDXEditor />
-  );
+  return <MDXEditor />;
 }
 ```
 
 ### Viewer
 
-```typescript
-import { MDXViewer } from '@dopejs/markdown-editor'
+```tsx
+import { MDXViewer } from '@dopejs/markdown-editor';
 
 export default function Page() {
-  return (
-    <MDXViewer mdx={'# test'} />
-  );
+  return <MDXViewer mdx={'# test'} />;
 }
 ```

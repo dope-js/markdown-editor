@@ -8,21 +8,21 @@
   .wrapper {
     user-select: none;
     border: transparent solid 2px;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--dme-border-radius-small);
     box-sizing: border-box;
     display: inline-block;
 
     &:hover {
-      background-color: var(--color-fill-0);
+      background-color: var(--dme-color-fill-0);
     }
 
     &.selected {
-      background-color: var(--color-fill-0);
+      background-color: var(--dme-color-fill-0);
     }
 
     .empty {
       font-style: italic;
-      color: var(--color-text-3);
+      color: var(--dme-color-text-3);
     }
   }
 }
@@ -33,14 +33,14 @@
   gap: 8px;
 
   .input {
-    font-family: var(--font-mono);
+    font-family: var(--dme-font-mono);
     word-break: break-all;
     min-width: 200px;
     max-width: 300px;
-    outline: solid 1px var(--color-primary);
+    outline: solid 1px var(--dme-color-primary);
 
     :global(.dme-input-textarea) {
-      font-family: var(--font-mono);
+      font-family: var(--dme-font-mono);
       line-height: 150%;
       font-size: 14px;
     }
@@ -53,9 +53,9 @@
   }
 
   .error {
-    color: var(--color-danger);
+    color: var(--dme-color-danger);
     max-width: 300px;
-    font-family: var(--font-mono);
+    font-family: var(--dme-font-mono);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -69,8 +69,8 @@
     .message {
       font-size: 12px;
       padding: 4px;
-      background-color: var(--color-fill-0);
-      border-radius: var(--border-radius-medium);
+      background-color: var(--dme-color-fill-0);
+      border-radius: var(--dme-border-radius-medium);
     }
   }
 }

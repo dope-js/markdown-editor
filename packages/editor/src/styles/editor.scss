@@ -3,16 +3,19 @@
 .mdxeditor {
   max-height: 100%;
   overflow-y: auto;
+  font-size: 14px;
 
   &-wrapper {
     position: relative;
     text-align: left;
+    background-color: var(--dme-color-bg-1);
   }
 
   &-content {
     box-sizing: border-box;
     width: 100%;
     padding: 12px;
+    color: var(--dme-color-text-0);
 
     &:focus {
       outline: none;
@@ -78,7 +81,7 @@
     blockquote {
       margin: 0;
       padding: 0.4em 1em;
-      border-left: solid 3px var(--color-border);
+      border-left: solid 3px var(--dme-color-border);
     }
 
     hr {
@@ -92,7 +95,7 @@
         left: 0;
         right: 0;
         height: 2px;
-        background-color: var(--color-border);
+        background-color: var(--dme-color-border);
         top: 50%;
         transform: translateY(-50%);
       }
@@ -106,7 +109,7 @@
       margin: 1em 0;
 
       li::marker {
-        color: rgb(var(--grey-3));
+        color: rgb(var(--dme-grey-3));
       }
     }
 
@@ -125,12 +128,12 @@
 
     :global {
       hr[data-lexical-decorator='true'].selected::before {
-        border: 2px solid var(--color-primary);
+        border: 2px solid var(--dme-color-primary);
       }
     }
 
-    &.placeholder {
-      color: var(--color-text-3);
+    &.editor-content-placeholder {
+      color: var(--dme-color-text-3);
       overflow: hidden;
       position: absolute;
       top: 0;
@@ -141,4 +144,9 @@
       pointer-events: none;
     }
   }
+}
+
+.dme-highlight {
+  color: var(--dme-color-primary);
+  font-weight: 700;
 }

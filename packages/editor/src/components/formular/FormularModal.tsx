@@ -1,9 +1,10 @@
 import { useEditor } from '@/contexts';
-import { Modal, TextArea } from '@douyinfe/semi-ui';
+import { Modal } from '@douyinfe/semi-ui';
 import type { FC } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { BlockMath } from 'react-katex';
 import styles from './modal.module.scss';
+import { Textarea } from '../ui';
 
 interface IFormularModalProps {
   visible: boolean;
@@ -17,19 +18,12 @@ interface IFormularModalProps {
 export const FormularModal: FC<IFormularModalProps> = ({ title, visible, setVisible, math, setMath }) => {
   const [value, setValue] = useState(math);
   const first = useRef(false);
-  const ref = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
     setValue(math);
   }, [math]);
 
   const { t } = useEditor();
-
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.focus();
-    }
-  }, [ref.current]);
 
   return (
     <Modal
@@ -59,14 +53,13 @@ export const FormularModal: FC<IFormularModalProps> = ({ title, visible, setVisi
             />
           </div>
         )}
-        <TextArea
+        <Textarea
           autosize={{ minRows: 1, maxRows: 5 }}
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="off"
           data-1p-ignore
           className={styles.input}
-          ref={ref}
           autoFocus
           value={value}
           defaultValue={math}

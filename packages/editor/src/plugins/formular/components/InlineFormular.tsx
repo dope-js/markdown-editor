@@ -147,7 +147,7 @@ export const InlineFormular: FC<InlineFormularProps> = ({
     >
       <span ref={formularRef} className={clsx(styles.wrapper, { [styles.selected]: isSelected })}>
         {math.trim() ? (
-          <InlineMath math={math} errorColor="var(--color-danger)" />
+          <InlineMath math={math} errorColor="var(--dme-color-danger)" />
         ) : (
           <span className={styles.empty}>Insert formular...</span>
         )}

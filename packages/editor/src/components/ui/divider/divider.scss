@@ -1,7 +1,7 @@
 .dme-divider {
   margin: 1px 0;
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-text-0);
+  border-bottom: 1px solid var(--dme-color-border);
+  color: var(--dme-color-text-0);
   box-sizing: border-box;
 
   &-dashed {
@@ -17,7 +17,7 @@
     border-bottom: 0;
     display: inline-block;
     margin: 0 1px;
-    border-left: 1px solid var(--color-border);
+    border-left: 1px solid var(--dme-color-border);
     height: 20px;
     vertical-align: middle;
   }
@@ -29,7 +29,7 @@
     align-items: center;
 
     .dme-divider_inner-text {
-      font-weight: var(--font-weight-bold);
+      font-weight: var(--dme-font-weight-bold);
       padding: 0 8px;
       display: inline-block;
     }
@@ -38,7 +38,7 @@
     &::after {
       content: '';
       width: 50%;
-      border-bottom: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--dme-color-border);
     }
 
     &-left {
@@ -66,10 +66,10 @@
 .dme-divider-dashed {
   &::before,
   &::after {
-    border-bottom: 1px dashed var(--color-border);
+    border-bottom: 1px dashed var(--dme-color-border);
   }
 }
 
 .dme-divider-vertical.dme-divider-dashed {
-  border-left: 1px dashed var(--color-border);
+  border-left: 1px dashed var(--dme-color-border);
 }

@@ -1,6 +1,5 @@
-import { EditorButton, FormularModal, IconFormular } from '@/components';
+import { Dropdown, EditorButton, FormularModal, IconFormular } from '@/components';
 import { useEditor } from '@/contexts';
-import { Dropdown } from '@douyinfe/semi-ui';
 import { usePublisher } from '@mdxeditor/gurx';
 import type { FC } from 'react';
 import { useState } from 'react';
@@ -16,13 +15,11 @@ export const InsertFormular: FC = () => {
   return (
     <>
       <Dropdown
-        position="bottomLeft"
-        trigger="click"
-        clickToHide
         menu={[
-          { node: 'item', name: t('toolbar.formular.inline'), onClick: () => insertFormular({ value: '' }) },
-          { node: 'item', name: t('toolbar.formular.block'), onClick: () => setModalVisible(true) },
+          { name: t('toolbar.formular.inline'), onClick: () => insertFormular({ value: '' }) },
+          { name: t('toolbar.formular.block'), onClick: () => setModalVisible(true) },
         ]}
+        clickToHide
       >
         <div>
           <EditorButton icon={<IconFormular />} title={t('toolbar.formular.title')} />

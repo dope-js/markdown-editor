@@ -1,11 +1,4 @@
-import {
-  insertMarkdown$,
-  markdown$,
-  markdownSourceEditorValue$,
-  rootEditor$,
-  setMarkdown$,
-  viewMode$,
-} from '@/plugins';
+import { insertMarkdown$, value$, markdownSourceEditorValue$, rootEditor$, setValue$, viewMode$ } from '@/plugins';
 import type { EditorMethods } from '@/types';
 import { useRealm } from '@mdxeditor/gurx';
 import type { FC, ForwardedRef } from 'react';
@@ -16,15 +9,15 @@ export const Methods: FC<{ mdxRef: ForwardedRef<EditorMethods> }> = ({ mdxRef })
 
   useImperativeHandle(mdxRef, () => {
     return {
-      getMarkdown: () => {
+      getValue: () => {
         if (realm.getValue(viewMode$) === 'source') {
           return realm.getValue(markdownSourceEditorValue$);
         }
 
-        return realm.getValue(markdown$);
+        return realm.getValue(value$);
       },
-      setMarkdown: (markdown) => {
-        realm.pub(setMarkdown$, markdown);
+      setValue: (markdown) => {
+        realm.pub(setValue$, markdown);
       },
       insertMarkdown: (markdown) => {
         realm.pub(insertMarkdown$, markdown);

@@ -211,12 +211,12 @@ export const initialMarkdown$ = Cell('');
  * Holds the current markdown value.
  * @group Core
  */
-export const markdown$ = Cell('');
+export const value$ = Cell('');
 
 /** @internal */
 const markdownSignal$ = Signal<string>((r) => {
-  r.link(markdown$, markdownSignal$);
-  r.link(initialMarkdown$, markdown$);
+  r.link(value$, markdownSignal$);
+  r.link(initialMarkdown$, value$);
 });
 
 const mutableMarkdownSignal$ = Signal<string>((r) => {
@@ -323,11 +323,11 @@ export const muteChange$ = Cell(false);
  * Sets a new markdown value for the editor, replacing the current one.
  * @group Core
  */
-export const setMarkdown$ = Signal<string>((r) => {
+export const setValue$ = Signal<string>((r) => {
   r.sub(
     r.pipe(
-      setMarkdown$,
-      withLatestFrom(markdown$, rootEditor$, inFocus$),
+      setValue$,
+      withLatestFrom(value$, rootEditor$, inFocus$),
       filter(([newMarkdown, oldMarkdown]) => {
         return newMarkdown.trim() !== oldMarkdown.trim();
       })
@@ -522,7 +522,7 @@ export const createRootEditorSubscription$ = Appender(rootEditorSubscriptions$, 
           });
         });
 
-        r.pub(markdown$, theNewMarkdownValue.trim());
+        r.pub(value$, theNewMarkdownValue.trim());
       });
     },
     (rootEditor) => {
@@ -634,7 +634,7 @@ function tryImportingMarkdown(r: Realm, node: ImportPoint, markdownValue: string
   } catch (e) {
     if (e instanceof MarkdownParseError || e instanceof UnrecognizedMarkdownConstructError) {
       r.pubIn({
-        [markdown$]: markdownValue,
+        [value$]: markdownValue,
         [markdownProcessingError$]: {
           error: e.message,
           source: markdownValue,
@@ -781,7 +781,7 @@ export const viewMode$ = Cell<ViewMode>('rich-text', (r) => {
     r.pipe(viewMode$, currentNextViewMode(), withLatestFrom(markdownSourceEditorValue$)),
     ([{ current }, markdownSourceFromEditor]) => {
       if (current === 'source' || current === 'diff') {
-        r.pub(setMarkdown$, markdownSourceFromEditor);
+        r.pub(setValue$, markdownSourceFromEditor);
       }
     }
   );
@@ -804,7 +804,7 @@ export const viewMode$ = Cell<ViewMode>('rich-text', (r) => {
  * @group Diff/Source
  */
 export const markdownSourceEditorValue$ = Cell('', (r) => {
-  r.link(markdown$, markdownSourceEditorValue$);
+  r.link(value$, markdownSourceEditorValue$);
   r.link(markdownSourceEditorValue$, markdownSignal$);
 });
 
@@ -824,7 +824,7 @@ export const lexicalTheme$ = Cell<EditorThemeClasses>(lexicalTheme);
 
 /** @internal */
 export const corePlugin = defineEditorPlugin<{
-  initialMarkdown: string;
+  initialValue: string;
   contentEditableClassName: string;
   spellCheck: boolean;
   placeholder?: ReactNode;
@@ -839,7 +839,7 @@ export const corePlugin = defineEditorPlugin<{
   lexicalTheme?: EditorThemeClasses;
 }>({
   init(r, params) {
-    const initialMarkdown = params?.initialMarkdown ?? '';
+    const initialMarkdown = params?.initialValue ?? '';
 
     r.register(createRootEditorSubscription$);
     r.register(createActiveEditorSubscription$);
@@ -902,7 +902,7 @@ export const corePlugin = defineEditorPlugin<{
     });
 
     newEditor.update(() => {
-      const markdown = params?.initialMarkdown.trim() ?? '';
+      const markdown = params?.initialValue.trim() ?? '';
       tryImportingMarkdown(r, $getRoot(), markdown);
 
       const autoFocusValue = params?.autoFocus;

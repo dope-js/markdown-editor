@@ -6,27 +6,55 @@ import type { IButtonProps } from './types';
 
 import './button.scss';
 
-export const Button: FC<IButtonProps> = (props) => {
+export const Button: FC<IButtonProps> = ({
+  disabled = false,
+  size = 'default',
+  type = 'primary',
+  theme = 'light',
+  block = false,
+  loading = false,
+  htmlType = 'button',
+  onMouseDown = noop,
+  onClick = noop,
+  onMouseEnter = noop,
+  onMouseLeave = noop,
+  ...props
+}) => {
   const hasIcon = useMemo(() => !!props.icon, [props.icon]);
-  const isLoading = useMemo(() => !!props.loading, [props.loading]);
-  const isDisabled = useMemo(() => !!props.disabled, [props.disabled]);
 
-  if (hasIcon || (isLoading && !isDisabled)) {
-    return <IconButton {...props} />;
+  if (hasIcon || (loading && !disabled)) {
+    return (
+      <IconButton
+        disabled={disabled}
+        size={size}
+        type={type}
+        theme={theme}
+        block={block}
+        loading={loading}
+        htmlType={htmlType}
+        onMouseDown={onMouseDown}
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        {...props}
+      />
+    );
   } else {
-    return <BaseButton {...props} />;
+    return (
+      <BaseButton
+        disabled={disabled}
+        size={size}
+        type={type}
+        theme={theme}
+        block={block}
+        loading={loading}
+        htmlType={htmlType}
+        onMouseDown={onMouseDown}
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        {...props}
+      />
+    );
   }
-};
-
-Button.defaultProps = {
-  disabled: false,
-  size: 'default',
-  type: 'primary',
-  theme: 'light',
-  block: false,
-  htmlType: 'button',
-  onMouseDown: noop,
-  onClick: noop,
-  onMouseEnter: noop,
-  onMouseLeave: noop,
 };
