@@ -3,9 +3,9 @@ import './App.css';
 import '@dope-js/markdown-editor/style.css';
 
 const markdown = `
-\`\`\`jsx
-test
-\`\`\`
+| foo | bar |
+| --- | --- |
+| baz | bim |
 `;
 
 function App() {

@@ -2,7 +2,8 @@ import { voidEmitter } from '@/utils';
 import type { EditorConfig, LexicalEditor, LexicalNode, NodeKey, SerializedLexicalNode, Spread } from 'lexical';
 import { DecoratorNode } from 'lexical';
 import { FormularBlock } from './components';
-import styles from './components/formular.module.scss';
+
+import './components/formular.scss';
 
 export interface CreateFormularBlockNodeOptions {
   value: string;
@@ -46,7 +47,7 @@ export class FormularBlockNode extends DecoratorNode<JSX.Element> {
 
   createDOM(_config: EditorConfig): HTMLSpanElement {
     const div = document.createElement('div');
-    div.className = styles.formular;
+    div.className = 'dme-formular-block';
 
     return div;
   }

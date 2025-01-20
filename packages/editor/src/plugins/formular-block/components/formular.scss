@@ -1,7 +1,7 @@
-.formular {
+.dme-formular-block {
   display: block;
 
-  .wrapper {
+  .dme-formular-block-wrapper {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -13,22 +13,22 @@
       background-color: var(--dme-color-fill-0);
     }
 
-    &.selected {
+    &.dme-formular-block-selected {
       background-color: var(--dme-color-fill-0);
     }
 
-    .empty {
+    .dme-formular-block-empty {
       font-style: italic;
       color: var(--dme-color-text-3);
     }
   }
 }
 
-.formular-menu {
+.dme-formular-block-menu {
   padding: 4px;
 
-  .content {
-    :global(.dme-popover-content) {
+  .dme-formular-block-menu-content {
+    .dme-popover-content {
       display: flex;
       padding: 4px;
       gap: 4px;

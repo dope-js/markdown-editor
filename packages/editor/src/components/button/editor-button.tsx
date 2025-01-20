@@ -3,7 +3,8 @@ import type { CSSProperties, FC, MouseEvent, ReactNode } from 'react';
 import { useMemo } from 'react';
 import type { Size } from '../ui';
 import { Button, Tooltip } from '../ui';
-import styles from './button.module.scss';
+
+import './button.scss';
 
 interface IToolbarButtonProps {
   icon: ReactNode;
@@ -23,7 +24,7 @@ type IInnerButtonProps = Omit<IToolbarButtonProps, 'title' | 'activeTitle'>;
 const InnerButton: FC<IInnerButtonProps> = ({ active = false, minor = false, ...rest }) => {
   return (
     <Button
-      className={clsx({ [styles.minor]: minor })}
+      className={clsx({ 'dme-button-minor': minor })}
       theme={active ? 'light' : 'borderless'}
       type={active ? 'primary' : 'tertiary'}
       {...rest}

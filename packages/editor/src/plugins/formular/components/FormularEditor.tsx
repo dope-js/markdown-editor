@@ -2,7 +2,8 @@ import { Textarea } from '@/components';
 import type { FC } from 'react';
 import { useRef, useState } from 'react';
 import { InlineMath } from 'react-katex';
-import styles from './formular.module.scss';
+
+import './formular.scss';
 
 interface IFormularEditorProps {
   math: string;
@@ -22,15 +23,15 @@ export const FormularEditor: FC<IFormularEditorProps> = ({ math, onChange, autoF
   // }, [autoFocus, ref.current]);
 
   return (
-    <div className={styles.editor}>
+    <div className="dme-formular-editor">
       {!!value && (
-        <div className={styles.preview}>
+        <div className="dme-formular-preview">
           <InlineMath
             math={value}
             renderError={(err) => (
-              <div className={styles.error}>
-                <div className={styles.errorFormular}>{value}</div>
-                <div className={styles.message}>{err.message}</div>
+              <div className="dme-formular-error">
+                <div className="dme-formular-error_formular">{value}</div>
+                <div className="dme-formular-message">{err.message}</div>
               </div>
             )}
           />
@@ -42,7 +43,7 @@ export const FormularEditor: FC<IFormularEditorProps> = ({ math, onChange, autoF
         autoCorrect="off"
         autoCapitalize="off"
         data-1p-ignore
-        className={styles.input}
+        className="dme-formular-input"
         // ref={ref}
         value={value}
         defaultValue={math}

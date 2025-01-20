@@ -3,8 +3,9 @@ import { Modal } from '@douyinfe/semi-ui';
 import type { FC } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { BlockMath } from 'react-katex';
-import styles from './modal.module.scss';
 import { Textarea } from '../ui';
+
+import './modal.scss';
 
 interface IFormularModalProps {
   visible: boolean;
@@ -40,14 +41,14 @@ export const FormularModal: FC<IFormularModalProps> = ({ title, visible, setVisi
       okButtonProps={{ disabled: !value }}
       okText={t('submit')}
     >
-      <div className={styles.editor}>
+      <div className={'dme-formular-editor'}>
         {!!value && (
-          <div className={styles.preview}>
+          <div className={'dme-formular-preview'}>
             <BlockMath
               math={value}
               renderError={(err) => (
-                <div className={styles.error}>
-                  <div className={styles.message}>{err.message}</div>
+                <div className={'dme-formular-error'}>
+                  <div className={'dme-formular-message'}>{err.message}</div>
                 </div>
               )}
             />
@@ -59,7 +60,7 @@ export const FormularModal: FC<IFormularModalProps> = ({ title, visible, setVisi
           autoCorrect="off"
           autoCapitalize="off"
           data-1p-ignore
-          className={styles.input}
+          className={'dme-formular-input'}
           autoFocus
           value={value}
           defaultValue={math}

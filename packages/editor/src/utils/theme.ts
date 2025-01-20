@@ -1,23 +1,24 @@
 import type { EditorThemeClasses } from 'lexical';
-import styles from '../styles/lexical-theme.module.scss';
+
+import '../styles/lexical-theme.scss';
 
 export const lexicalTheme: EditorThemeClasses = {
   text: {
-    bold: styles.bold,
-    italic: styles.italic,
-    underline: styles.underline,
-    code: styles.code,
-    strikethrough: styles.strikethrough,
-    subscript: styles.subscript,
-    superscript: styles.superscript,
-    underlineStrikethrough: styles.underlineStrikethrough,
+    bold: 'dme-theme-bold',
+    italic: 'dme-theme-italic',
+    underline: 'dme-theme-underline',
+    code: 'dme-theme-code',
+    strikethrough: 'dme-theme-strikethrough',
+    subscript: 'dme-theme-subscript',
+    superscript: 'dme-theme-superscript',
+    underlineStrikethrough: 'dme-theme-underline-strikethrough',
   },
   list: {
-    listitem: styles.listitem,
-    listitemChecked: styles.listItemChecked,
-    listitemUnchecked: styles.listItemUnchecked,
+    listitem: 'dme-theme-listitem',
+    listitemChecked: 'dme-theme-listitem_checked',
+    listitemUnchecked: 'dme-theme-listitem_unchecked',
     nested: {
-      listitem: styles.nestedListItem,
+      listitem: 'dme-theme-nested-listitem',
     },
   },
 };

@@ -9,10 +9,11 @@ import { basicLight } from 'cm6-theme-basic-light';
 import { basicSetup } from 'codemirror';
 import { useEffect, useRef } from 'react';
 import { codeBlockLanguages$, codeMirrorAutoLoadLanguageSupport$, codeMirrorExtensions$ } from '.';
-import styles from './codemirror.module.scss';
 import type { CodeBlockEditorProps } from '../codeblock';
 import { useCodeBlockEditorContext } from '../codeblock/node';
 import { readOnly$ } from '../core';
+
+import './codemirror.scss';
 
 const emptyValue = '__EMPTY_VALUE__';
 
@@ -82,12 +83,12 @@ export const CodeMirrorEditor = ({ language, code }: CodeBlockEditorProps) => {
 
   return (
     <div
-      className={styles.wrapper}
+      className={'dme-code-wrapper'}
       onKeyDown={(e) => {
         e.stopPropagation();
       }}
     >
-      <div className={styles.toolbar}>
+      <div className="dme-code-toolbar">
         <Select
           value={language}
           onChange={(language) => {

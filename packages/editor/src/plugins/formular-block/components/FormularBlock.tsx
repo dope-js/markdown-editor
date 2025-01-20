@@ -20,7 +20,7 @@ import type { FC } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { BlockMath } from 'react-katex';
 import { $isFormularBlockNode, type FormularBlockNode } from '../FormularBlockNode';
-import styles from './formular.module.scss';
+import './formular.scss';
 
 interface IFormularBlockProps {
   math: string;
@@ -116,8 +116,8 @@ export const FormularBlock: FC<IFormularBlockProps> = ({ math, nodeKey, formular
         visible={isSelected}
         position="top"
         showArrow
-        className={styles.formularMenu}
-        contentClassName={styles.content}
+        className="dme-formular-block-menu"
+        contentClassName="dme-formular-block-menu-content"
         content={
           <>
             <EditorButton
@@ -144,11 +144,14 @@ export const FormularBlock: FC<IFormularBlockProps> = ({ math, nodeKey, formular
           </>
         }
       >
-        <div ref={formularRef} className={clsx(styles.wrapper, { [styles.selected]: isSelected })}>
+        <div
+          ref={formularRef}
+          className={clsx('dme-formular-block-wrapper', { 'dme-formular-block-selected': isSelected })}
+        >
           {math.trim() ? (
             <BlockMath math={math} />
           ) : (
-            <span className={styles.empty} onClick={() => setModalVisible(true)}>
+            <span className="dme-formular-block-empty" onClick={() => setModalVisible(true)}>
               Insert formular...
             </span>
           )}

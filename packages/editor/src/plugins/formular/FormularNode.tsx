@@ -2,7 +2,8 @@ import { voidEmitter } from '@/utils';
 import type { EditorConfig, LexicalEditor, LexicalNode, NodeKey, SerializedLexicalNode, Spread } from 'lexical';
 import { DecoratorNode } from 'lexical';
 import { InlineFormular } from './components';
-import styles from './components/formular.module.scss';
+
+import './components/formular.scss';
 
 export interface CreateFormularNodeOptions {
   value: string;
@@ -52,7 +53,7 @@ export class FormularNode extends DecoratorNode<JSX.Element> {
 
   createDOM(_config: EditorConfig): HTMLSpanElement {
     const span = document.createElement('span');
-    span.className = styles.formular;
+    span.className = 'dme-formular';
 
     return span;
   }

@@ -13,7 +13,8 @@ import type {
 import { DecoratorNode } from 'lexical';
 import type { MdxJsxAttribute, MdxJsxExpressionAttribute } from 'mdast-util-mdx-jsx';
 import { ImageEditor } from './components';
-import styles from './components/image.module.scss';
+
+import './components/image.scss';
 
 function convertImageElement(domNode: Node): null | DOMConversionOutput {
   if (domNode instanceof HTMLImageElement) {
@@ -170,7 +171,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
   createDOM(config: EditorConfig): HTMLElement {
     const div = document.createElement('div');
     const theme = config.theme;
-    const className = clsx(theme.image, styles.container);
+    const className = clsx(theme.image, 'dme-image-container');
     if (className !== undefined) {
       div.className = className;
     }

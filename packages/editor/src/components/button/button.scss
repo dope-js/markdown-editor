@@ -1,12 +1,12 @@
-.minor {
-  :global(.dme-button-content) {
+.dme-button-minor {
+  .dme-button-content {
     color: rgba(var(--dme-grey-2), 1);
   }
 
   &:hover {
     color: var(--dme-color-text-1);
 
-    :global(.dme-button-content) {
+    .dme-button-content {
       color: var(--dme-color-text-1);
     }
   }
@@ -15,7 +15,7 @@
     color: var(--dme-color-text-1);
     background-color: var(--dme-color-tertiary-active);
 
-    :global(.dme-button-content) {
+    .dme-button-content {
       color: var(--dme-color-text-1);
     }
   }

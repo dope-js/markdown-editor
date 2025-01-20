@@ -1,10 +1,9 @@
 import type { ElementType } from 'react';
-import styles from './table-editor.module.scss';
 
 export const AlignToTailwindClassMap = {
-  center: styles.centeredCell,
-  left: styles.leftAlignedCell,
-  right: styles.rightAlignedCell,
+  center: 'dme-table-centered-cell',
+  left: 'dme-table-left-aligned-cell',
+  right: 'dme-table-right-aligned-cell',
 };
 
 export const getCellType = (rowIndex: number): ElementType => {

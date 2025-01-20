@@ -1,4 +1,4 @@
-.table-editor {
+.dme-table-editor {
   table-layout: fixed;
   width: 100%;
   height: 100%;
@@ -16,8 +16,8 @@
     }
   }
 
-  > tbody > tr > td:not(.tool-cell),
-  > tbody > tr > th:not(.tool-cell):not([data-tool-cell='true']) {
+  > tbody > tr > td:not(.dme-tool-cell),
+  > tbody > tr > th:not(.dme-tool-cell):not([data-tool-cell='true']) {
     border: 1px solid var(--dme-color-border);
     padding: 0.4rem 0.5rem;
     white-space: normal;
@@ -45,11 +45,11 @@
   }
 }
 
-.table-menu {
+.dme-table-menu {
   padding: 4px;
 
-  .content {
-    :global(.dme-popover-content) {
+  .dme-table-menu-content {
+    .dme-popover-content {
       display: flex;
       padding: 4px;
       gap: 4px;
@@ -58,7 +58,7 @@
   }
 }
 
-.table-tools-column {
+.dme-table-tools-column {
   width: 2rem;
 
   & button {
@@ -67,14 +67,14 @@
   }
 }
 
-.left-aligned-cell {
+.dme-table-left-aligned-cell {
   text-align: left;
 }
 
-.right-aligned-cell {
+.dme-table-right-aligned-cell {
   text-align: right;
 }
 
-.centered-cell {
+.dme-table-centered-cell {
   text-align: center;
 }

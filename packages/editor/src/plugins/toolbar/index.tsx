@@ -4,7 +4,8 @@ import { clsx } from 'clsx';
 import type { ReactNode } from 'react';
 import { addTopAreaChild$, readOnly$ } from '../core';
 import { EditorToolbar } from './components';
-import styles from './toolbar.module.scss';
+
+import './toolbar.scss';
 
 /**
  * The factory function that returns the contents of the toolbar.
@@ -31,7 +32,7 @@ export const toolbarPlugin = defineEditorPlugin<{ toolbarContents?: () => ReactN
           toolbarClassName$
         );
         return (
-          <div className={clsx(styles.root, toolbarClassName)} {...(readOnly ? { tabIndex: -1 } : {})}>
+          <div className={clsx('dme-toolbar-root', toolbarClassName)} {...(readOnly ? { tabIndex: -1 } : {})}>
             {toolbarContents()}
           </div>
         );

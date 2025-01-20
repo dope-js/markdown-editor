@@ -22,7 +22,7 @@ export function handleVisibleMaxLength(value: string, maxLength?: number, getVal
     const valueLength = getValueLength(value);
     if (valueLength > maxLength) {
       console.warn(
-        '[Semi TextArea] The input character is truncated because the input length exceeds the maximum length limit'
+        '[TextArea] The input character is truncated because the input length exceeds the maximum length limit'
       );
       const truncatedValue = handleTruncateValue(value, maxLength);
       return truncatedValue;

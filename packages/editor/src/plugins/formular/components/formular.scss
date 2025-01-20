@@ -1,11 +1,11 @@
-.formular {
+.dme-formular {
   &:has(.empty) {
     display: inline-flex;
     justify-content: center;
     align-items: center;
   }
 
-  .wrapper {
+  .dme-formular-wrapper {
     user-select: none;
     border: transparent solid 2px;
     border-radius: var(--dme-border-radius-small);
@@ -16,43 +16,43 @@
       background-color: var(--dme-color-fill-0);
     }
 
-    &.selected {
+    &.dme-formular-selected {
       background-color: var(--dme-color-fill-0);
     }
 
-    .empty {
+    .dme-formular-empty {
       font-style: italic;
       color: var(--dme-color-text-3);
     }
   }
 }
 
-.editor {
+.dme-formular-editor {
   display: flex;
   flex-direction: column;
   gap: 8px;
 
-  .input {
+  .dme-formular-input {
     font-family: var(--dme-font-mono);
     word-break: break-all;
     min-width: 200px;
     max-width: 300px;
     outline: solid 1px var(--dme-color-primary);
 
-    :global(.dme-input-textarea) {
+    .dme-textarea {
       font-family: var(--dme-font-mono);
       line-height: 150%;
       font-size: 14px;
     }
   }
 
-  .preview {
+  .dme-formular-preview {
     padding: 8px;
     display: flex;
     justify-content: center;
   }
 
-  .error {
+  .dme-formular-error {
     color: var(--dme-color-danger);
     max-width: 300px;
     font-family: var(--dme-font-mono);
@@ -60,13 +60,13 @@
     flex-direction: column;
     gap: 8px;
 
-    .error-formular {
+    .dme-formular-error_formular {
       font-size: 14px;
       display: flex;
       justify-content: center;
     }
 
-    .message {
+    .dme-formular-message {
       font-size: 12px;
       padding: 4px;
       background-color: var(--dme-color-fill-0);

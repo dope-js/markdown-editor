@@ -14,7 +14,6 @@ import type { LexicalEditor } from 'lexical';
 import type { AlignType } from 'mdast';
 import type { FC } from 'react';
 import { useCallback } from 'react';
-import styles from './table-editor.module.scss';
 import type { TableNode } from '../TableNode';
 
 interface ColumnEditorProps {
@@ -69,8 +68,8 @@ export const ColumnEditor: FC<ColumnEditorProps> = ({
       trigger="click"
       position="top"
       showArrow
-      className={styles.tableMenu}
-      contentClassName={styles.content}
+      className="dme-table-menu"
+      contentClassName="dme-table-menu-content"
       content={
         <>
           <EditorButton

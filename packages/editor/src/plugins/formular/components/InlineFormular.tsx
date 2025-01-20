@@ -17,9 +17,10 @@ import {
 import type { FC } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { InlineMath } from 'react-katex';
-import styles from './formular.module.scss';
 import { $isFormularNode, type FormularNode } from '../FormularNode';
 import { FormularEditor } from './FormularEditor';
+
+import './formular.scss';
 
 interface InlineFormularProps {
   math: string;
@@ -145,11 +146,11 @@ export const InlineFormular: FC<InlineFormularProps> = ({
       }
       showArrow
     >
-      <span ref={formularRef} className={clsx(styles.wrapper, { [styles.selected]: isSelected })}>
+      <span ref={formularRef} className={clsx('dme-formular-wrapper', { 'dme-formular-selected': isSelected })}>
         {math.trim() ? (
           <InlineMath math={math} errorColor="var(--dme-color-danger)" />
         ) : (
-          <span className={styles.empty}>Insert formular...</span>
+          <span className="dme-formular-empty">Insert formular...</span>
         )}
       </span>
     </Popover>

@@ -126,10 +126,8 @@
       }
     }
 
-    :global {
-      hr[data-lexical-decorator='true'].selected::before {
-        border: 2px solid var(--dme-color-primary);
-      }
+    hr[data-lexical-decorator='true'].selected::before {
+      border: 2px solid var(--dme-color-primary);
     }
 
     &.editor-content-placeholder {

@@ -1,40 +1,40 @@
-.editor {
+.dme-formular-editor {
   display: flex;
   flex-direction: column;
   gap: 8px;
 
-  .input {
+  .dme-formular-input {
     font-family: var(--dme-font-mono);
     word-break: break-all;
     outline: solid 1px var(--dme-color-primary);
 
-    :global(.dme-input-textarea) {
+    .dme-textarea {
       font-family: var(--dme-font-mono);
       line-height: 150%;
       font-size: 14px;
     }
   }
 
-  .preview {
+  .dme-formular-preview {
     padding: 8px;
     display: flex;
     justify-content: center;
   }
 
-  .error {
+  .dme-formular-error {
     color: var(--dme-color-danger);
     font-family: var(--dme-font-mono);
     display: flex;
     flex-direction: column;
     gap: 8px;
 
-    .error-formular {
+    .dme-formular-error_formular {
       font-size: 14px;
       display: flex;
       justify-content: center;
     }
 
-    .message {
+    .dme-formular-message {
       font-size: 12px;
       padding: 4px;
       background-color: var(--dme-color-fill-0);

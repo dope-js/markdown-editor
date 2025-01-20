@@ -11,9 +11,10 @@ import type { TableNode } from '../TableNode';
 import { Cell } from './cell';
 import { ColumnEditor } from './col-editor';
 import { RowEditor } from './row-editor';
-import styles from './table-editor.module.scss';
 import { AlignToTailwindClassMap, getCellType } from './utils';
 import { readOnly$ } from '../../core';
+
+import './table-editor.scss';
 
 export interface TableEditorProps {
   parentEditor: LexicalEditor;
@@ -142,7 +143,7 @@ export const TableEditor: FC<TableEditorProps> = ({ mdastNode, parentEditor, lex
   // remove tool cols in readOnly mode
   return (
     <table
-      className={styles.tableEditor}
+      className={'dme-table-editor'}
       onMouseOver={onTableMouseOver}
       onMouseLeave={() => setHighlightedCoordinates([-1, -1])}
     >
@@ -160,7 +161,7 @@ export const TableEditor: FC<TableEditorProps> = ({ mdastNode, parentEditor, lex
       {readOnly || (
         <thead>
           <tr>
-            <th className={styles.tableToolsColumn}></th>
+            <th className="dme-table-tools-column"></th>
             {Array.from({ length: mdastNode.children[0].children.length }, (_, colIndex) => {
               return (
                 <th key={colIndex} data-tool-cell={true}>
@@ -177,7 +178,7 @@ export const TableEditor: FC<TableEditorProps> = ({ mdastNode, parentEditor, lex
                 </th>
               );
             })}
-            <th className={styles.tableToolsColumn} data-tool-cell={true}>
+            <th className="dme-table-tools-column" data-tool-cell={true}>
               <EditorButton
                 icon={<IconDelete />}
                 title={t('table.remove')}
@@ -202,7 +203,7 @@ export const TableEditor: FC<TableEditorProps> = ({ mdastNode, parentEditor, lex
           return (
             <tr key={rowIndex}>
               {readOnly || (
-                <CellElement className={styles.toolCell} data-tool-cell={true}>
+                <CellElement className="dme-tool-cell" data-tool-cell={true}>
                   <RowEditor
                     {...{ setActiveCellWithBoundaries, parentEditor, rowIndex, highlightedCoordinates, lexicalTable }}
                   />

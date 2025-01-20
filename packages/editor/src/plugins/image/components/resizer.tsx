@@ -10,7 +10,6 @@ import { clsx } from 'clsx';
 import type { LexicalEditor } from 'lexical';
 import type { FC, PointerEvent as ReactPointerEvent } from 'react';
 import { useMemo, useRef } from 'react';
-import styles from './image.module.scss';
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
@@ -150,7 +149,7 @@ export const ImageResizer: FC<ImageResizerProps> = ({
       setStartCursor(direction);
       onResizeStart();
 
-      controlWrapper.classList.add(styles.imageControlWrapperResizing);
+      controlWrapper.classList.add('dme-image-control-wrapper-resizing');
       image.style.height = `${height}px`;
       image.style.width = `${width}px`;
 
@@ -218,7 +217,7 @@ export const ImageResizer: FC<ImageResizerProps> = ({
       positioning.currentHeight = 0;
       positioning.isResizing = false;
 
-      controlWrapper.classList.remove(styles.imageControlWrapperResizing);
+      controlWrapper.classList.remove('dme-image-control-wrapper-resizing');
 
       setEndCursor();
       const newWidth = typeof width === 'number' ? Math.round(width) : width;
@@ -243,58 +242,58 @@ export const ImageResizer: FC<ImageResizerProps> = ({
   }, [imageRef.current, positioningRef.current.currentWidth, positioningRef.current.minWidth]);
 
   const wrapperClassName = useMemo(() => {
-    if (!canZoomIn && !canZoomOut) return styles.none;
-    if (canZoomIn && canZoomOut) return styles.all;
-    if (canZoomIn) return styles.canZoomin;
-    return styles.canZoomout;
+    if (!canZoomIn && !canZoomOut) return 'none';
+    if (canZoomIn && canZoomOut) return 'all';
+    if (canZoomIn) return 'can-zoomin';
+    return 'can-zoomout';
   }, [canZoomIn, canZoomOut]);
 
   return (
-    <div ref={controlWrapperRef} className={clsx(styles.imageResizerWrapper, wrapperClassName)}>
+    <div ref={controlWrapperRef} className={clsx('dme-image-resizer-wrapper', wrapperClassName)}>
       <div
-        className={clsx(styles.imageResizer, styles.imageResizerN)}
+        className={clsx('dme-image-resizer', 'dme-image-resizer-n')}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.north);
         }}
       />
       <div
-        className={clsx(styles.imageResizer, styles.imageResizerNe)}
+        className={clsx('dme-image-resizer', 'dme-image-resizer-ne')}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.north | Direction.east);
         }}
       />
       <div
-        className={clsx(styles.imageResizer, styles.imageResizerE)}
+        className={clsx('dme-image-resizer', 'dme-image-resizer-e')}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.east);
         }}
       />
       <div
-        className={clsx(styles.imageResizer, styles.imageResizerSe)}
+        className={clsx('dme-image-resizer', 'dme-image-resizer-se')}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.south | Direction.east);
         }}
       />
       <div
-        className={clsx(styles.imageResizer, styles.imageResizerS)}
+        className={clsx('dme-image-resizer', 'dme-image-resizer-s')}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.south);
         }}
       />
       <div
-        className={clsx(styles.imageResizer, styles.imageResizerSw)}
+        className={clsx('dme-image-resizer', 'dme-image-resizer-sw')}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.south | Direction.west);
         }}
       />
       <div
-        className={clsx(styles.imageResizer, styles.imageResizerW)}
+        className={clsx('dme-image-resizer', 'dme-image-resizer-w')}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.west);
         }}
       />
       <div
-        className={clsx(styles.imageResizer, styles.imageResizerNw)}
+        className={clsx('dme-image-resizer', 'dme-image-resizer-nw')}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.north | Direction.west);
         }}

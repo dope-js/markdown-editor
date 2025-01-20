@@ -18,10 +18,11 @@ import {
 } from 'lexical';
 import type { MdxJsxAttribute, MdxJsxExpressionAttribute } from 'mdast-util-mdx-jsx';
 import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import styles from './image.module.scss';
 import { LazyImage } from './lazy-image';
 import { $isImageNode } from '../node';
 import { ImageResizer } from './resizer';
+
+import './image.scss';
 
 export interface ImageEditorProps {
   nodeKey: string;
@@ -165,8 +166,6 @@ export function ImageEditor({ src, title, alt, nodeKey, width, height, rest }: I
         visible={isFocused}
         position="top"
         showArrow
-        className={styles.formularMenu}
-        contentClassName={styles.content}
         content={
           <EditorButton
             icon={<IconDelete />}
@@ -182,8 +181,8 @@ export function ImageEditor({ src, title, alt, nodeKey, width, height, rest }: I
           />
         }
       >
-        <div className={styles.imageWrapper} ref={wrapperRef} data-editor-block-type="image">
-          <div className={clsx(styles.image, { [styles.focused]: isFocused })}>
+        <div className="dme-image-wrapper" ref={wrapperRef} data-editor-block-type="image">
+          <div className={clsx('dme-image', { 'dme-image-focused': isFocused })}>
             <LazyImage
               width={width}
               height={height}
