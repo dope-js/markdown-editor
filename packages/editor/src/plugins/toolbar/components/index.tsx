@@ -2,7 +2,7 @@ import { Divider } from '@/components';
 import type { FC } from 'react';
 import { InsertCodeBlock } from './code-block';
 import { InsertFormular } from './formular';
-// import { InsertImage } from './image';
+import { InsertImage } from './image';
 import { CodeToggle } from './inline-block';
 import { InsertTable } from './InsertTable';
 import { InsertThematicBreak } from './InsertThematicBreak';
@@ -26,7 +26,7 @@ export const EditorToolbar: FC = () => {
       <Divider layout="vertical" />
       <ListsToggle options={['bullet', 'number']} />
       <Divider layout="vertical" />
-      {/* <InsertImage /> */}
+      <InsertImage />
       <InsertTable />
       <InsertFormular />
       <InsertCodeBlock />

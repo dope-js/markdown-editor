@@ -1,6 +1,5 @@
-import { EditorButton, FormularModal, IconDelete, IconEdit } from '@/components';
+import { Divider, EditorButton, FormularModal, IconDelete, IconEdit, Popover } from '@/components';
 import { useEditor } from '@/contexts';
-import { Divider, Popover } from '@douyinfe/semi-ui';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection';
 import { mergeRegister } from '@lexical/utils';
@@ -20,6 +19,7 @@ import type { FC } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { BlockMath } from 'react-katex';
 import { $isFormularBlockNode, type FormularBlockNode } from '../FormularBlockNode';
+
 import './formular.scss';
 
 interface IFormularBlockProps {
@@ -115,7 +115,6 @@ export const FormularBlock: FC<IFormularBlockProps> = ({ math, nodeKey, formular
         trigger="custom"
         visible={isSelected}
         position="top"
-        showArrow
         className="dme-formular-block-menu"
         contentClassName="dme-formular-block-menu-content"
         content={

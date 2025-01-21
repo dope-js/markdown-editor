@@ -1,12 +1,13 @@
 import { useEditor } from '@/contexts';
 import { insertImage$ } from '@/plugins';
-import { Form, Modal, Toast } from '@douyinfe/semi-ui';
+import { Form, Toast } from '@douyinfe/semi-ui';
 import type { FormApi } from '@douyinfe/semi-ui/lib/es/form';
 import type { FileItem } from '@douyinfe/semi-ui/lib/es/upload';
 import { usePublisher } from '@mdxeditor/gurx';
 import type { AxiosResponse } from 'axios';
 import axios from 'axios';
 import { useRef, type FC } from 'react';
+import { Modal } from '../ui';
 
 interface IUploadModalProps {
   visible: boolean;
@@ -58,9 +59,7 @@ export const UploadModal: FC<IUploadModalProps> = ({
     <Modal
       title={t('image.upload.title')}
       visible={visible}
-      onCancel={() => setVisible(false)}
-      cancelText={t('cancel')}
-      okText={t('submit')}
+      onVisibleChange={setVisible}
       onOk={() => formApi.current?.submitForm()}
     >
       <Form

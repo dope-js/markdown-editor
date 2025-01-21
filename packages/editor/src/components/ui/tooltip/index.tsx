@@ -1,5 +1,15 @@
 import { useEditor } from '@/contexts';
-import { arrow, flip, FloatingPortal, offset, shift, useFloating, useHover, useInteractions } from '@floating-ui/react';
+import {
+  arrow,
+  flip,
+  FloatingArrow,
+  FloatingPortal,
+  offset,
+  shift,
+  useFloating,
+  useHover,
+  useInteractions,
+} from '@floating-ui/react';
 import clsx from 'clsx';
 import type { FC, ReactNode } from 'react';
 import { useRef, useState } from 'react';
@@ -47,18 +57,13 @@ export const Tooltip: FC<ITooltipProps> = ({ children, content }) => {
             style={floatingStyles}
             {...getFloatingProps()}
           >
-            <svg
+            <FloatingArrow
               ref={arrowRef}
-              aria-hidden="true"
-              className="demi-tooltip-arrow"
-              width="24"
-              height="7"
-              viewBox="0 0 24 7"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M24 0V1C20 1 18.5 2 16.5 4C14.5 6 14 7 12 7C10 7 9.5 6 7.5 4C5.5 2 4 1 0 1V0H24Z"></path>
-            </svg>
+              context={context}
+              fill="rgba(var(--dme-grey-7), 1)"
+              width={24}
+              d="M0,25L0,24C4,24,5.5,22.99999,7.5,20.99999C9.5,19,10,18,12,18C14,18,14.5,19,16.5,21C18.5,23,20,24,24,24L24,25L0,25Z"
+            />
             {typeof content === 'string' ? <span className="dme-tooltip-content">{content}</span> : content}
           </div>
         </FloatingPortal>

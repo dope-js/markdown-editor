@@ -5,6 +5,7 @@ export * from './bold';
 export * from './check-list';
 export * from './chevron-down';
 export * from './clear';
+export * from './close';
 export * from './code-block';
 export * from './code';
 export * from './delete';

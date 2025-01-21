@@ -1,6 +1,8 @@
 import { useEditor } from '@/contexts';
 import {
+  arrow,
   flip,
+  FloatingArrow,
   FloatingPortal,
   offset,
   shift,
@@ -8,10 +10,11 @@ import {
   useDismiss,
   useFloating,
   useInteractions,
+  useMergeRefs,
 } from '@floating-ui/react';
 import clsx from 'clsx';
 import type { FC, ReactNode } from 'react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { cloneElement, isValidElement, useEffect, useMemo, useRef, useState } from 'react';
 
 import './popover.scss';
 
@@ -48,28 +51,43 @@ export const Popover: FC<IPopoverProps> = ({
     placement: position,
     open: isOpen,
     onOpenChange: setIsOpen,
-    middleware: [offset(6), flip(), shift({ padding: 12 })],
+    middleware: [offset(6), flip(), shift({ padding: 12 }), arrow({ element: arrowRef })],
   });
 
-  const click = useClick(context);
+  const click = useClick(context, { enabled: trigger === 'click' });
   const dismiss = useDismiss(context);
 
-  const plugins = useMemo(() => {
-    const ret = [dismiss];
-    if (trigger === 'click') {
-      ret.push(click);
+  const { getReferenceProps, getFloatingProps } = useInteractions([dismiss, click]);
+
+  const childrenRef = (children as any).ref;
+  const ref = useMergeRefs([context.refs.setReference, childrenRef]);
+
+  const displayChildren = useMemo(() => {
+    if (typeof children === 'string') {
+      return (
+        <span ref={refs.setReference} {...getReferenceProps()}>
+          {children}
+        </span>
+      );
     }
 
-    return ret;
-  }, [trigger]);
+    if (isValidElement(children)) {
+      return cloneElement(
+        children,
+        getReferenceProps({
+          ref,
+          ...children.props,
+          'data-state': context.open ? 'open' : 'closed',
+        })
+      );
+    }
 
-  const { getReferenceProps, getFloatingProps } = useInteractions(plugins);
+    return children;
+  }, [children, refs.setReference, getReferenceProps]);
 
   return (
     <>
-      <div ref={refs.setReference} {...getReferenceProps()}>
-        {children}
-      </div>
+      {displayChildren}
       {isOpen && (
         <FloatingPortal root={document.body}>
           <div
@@ -80,12 +98,13 @@ export const Popover: FC<IPopoverProps> = ({
             x-placement={placement}
             {...getFloatingProps()}
           >
-            <svg ref={arrowRef} width="24" height="8" xmlns="http://www.w3.org/2000/svg" className="demi-popover-arrow">
-              <path
-                d="M0 0L0 1C4 1, 5.5 2, 7.5 4S10,7 12,7S14.5  6, 16.5 4S20,1 24,1L24 0L0 0z"
-                fill="var(--dme-color-bg-3)"
-              ></path>
-            </svg>
+            <FloatingArrow
+              ref={arrowRef}
+              context={context}
+              fill="var(--dme-color-bg-3)"
+              width={24}
+              d="M0,25L0,24C4,24,5.5,22.99999,7.5,20.99999C9.5,19,10,18,12,18C14,18,14.5,19,16.5,21C18.5,23,20,24,24,24L24,25L0,25Z"
+            />
             <div className={contentClassName}>
               <div className="dme-popover-content">{content}</div>
             </div>

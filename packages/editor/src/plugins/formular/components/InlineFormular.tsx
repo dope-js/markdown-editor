@@ -1,4 +1,4 @@
-import { Popover } from '@douyinfe/semi-ui';
+import { Popover } from '@/components';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection';
 import { mergeRegister } from '@lexical/utils';
@@ -144,7 +144,6 @@ export const InlineFormular: FC<InlineFormularProps> = ({
           }}
         />
       }
-      showArrow
     >
       <span ref={formularRef} className={clsx('dme-formular-wrapper', { 'dme-formular-selected': isSelected })}>
         {math.trim() ? (

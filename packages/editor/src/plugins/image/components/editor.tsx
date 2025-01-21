@@ -1,6 +1,5 @@
-import { EditorButton, IconDelete } from '@/components';
+import { EditorButton, IconDelete, Popover } from '@/components';
 import { useEditor } from '@/contexts';
-import { Popover } from '@douyinfe/semi-ui';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection';
 import { mergeRegister } from '@lexical/utils';
@@ -165,7 +164,6 @@ export function ImageEditor({ src, title, alt, nodeKey, width, height, rest }: I
         trigger="custom"
         visible={isFocused}
         position="top"
-        showArrow
         content={
           <EditorButton
             icon={<IconDelete />}

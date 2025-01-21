@@ -1,9 +1,7 @@
-import { useEditor } from '@/contexts';
-import { Modal } from '@douyinfe/semi-ui';
 import type { FC } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { BlockMath } from 'react-katex';
-import { Textarea } from '../ui';
+import { Modal, Textarea } from '../ui';
 
 import './modal.scss';
 
@@ -24,22 +22,16 @@ export const FormularModal: FC<IFormularModalProps> = ({ title, visible, setVisi
     setValue(math);
   }, [math]);
 
-  const { t } = useEditor();
-
   return (
     <Modal
       visible={visible}
       title={title}
-      onCancel={() => {
-        setVisible(false);
-      }}
-      cancelText={t('cancel')}
+      onVisibleChange={setVisible}
       onOk={() => {
         const newValue = value.trim();
         setMath(newValue);
       }}
       okButtonProps={{ disabled: !value }}
-      okText={t('submit')}
     >
       <div className={'dme-formular-editor'}>
         {!!value && (
