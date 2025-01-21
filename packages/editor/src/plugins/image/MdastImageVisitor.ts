@@ -106,8 +106,6 @@ export const MdastJsxImageVisitor: MdastImportVisitor<MdxJsxTextElement | MdxJsx
       }
     }
 
-    console.log(height, width);
-
     const rest = mdastNode.attributes.filter((a) => {
       return a.type === 'mdxJsxAttribute' && !['src', 'alt', 'title', 'height', 'width'].includes(a.name);
     });

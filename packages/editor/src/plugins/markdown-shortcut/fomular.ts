@@ -15,7 +15,6 @@ export const formularTransformer: TextMatchTransformer = {
     const str = match[0];
     if (!str) return;
     const value = str.trim().replace(/^\$+/g, '').replace(/\$+$/g, '').trim();
-    console.log(value, textNode);
 
     const formularNode = $createFormularNode({ value, isInsert: true, autoFocus: true });
     textNode.replace(formularNode);

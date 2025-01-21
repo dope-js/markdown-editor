@@ -1,4 +1,4 @@
-import { Image as SemiImage } from '@douyinfe/semi-ui';
+import { Image as ImageComp } from '@/components';
 import type { FC } from 'react';
 
 export const Image: FC<{
@@ -10,7 +10,7 @@ export const Image: FC<{
 }> = ({ width, height, src, title, alt }) => {
   return (
     <div className="dmv-image">
-      <SemiImage src={src} title={title} alt={alt} width={width} height={height} />
+      <ImageComp src={src} title={title} alt={alt} width={width} height={height} />
     </div>
   );
 };

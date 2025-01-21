@@ -2,12 +2,7 @@ import { MDXEditor, MDXViewer } from '@dope-js/markdown-editor';
 import './App.css';
 import '@dope-js/markdown-editor/style.css';
 import { useState } from 'react';
-
-const markdown = `
-| foo | bar |
-| --- | --- |
-| baz | bim |
-`;
+import markdown from './markdown.mdx?raw';
 
 function getImageSize(file: File | undefined) {
   return new Promise<{ width: number; height: number }>((resolve, reject) => {

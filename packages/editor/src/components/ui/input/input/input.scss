@@ -38,31 +38,31 @@
   }
 
   &.dme-input-error {
-    border-color: var(--semi-color-danger-light-default);
-    background-color: var(--semi-color-danger-light-default);
+    border-color: var(--dme-color-danger-light-default);
+    background-color: var(--dme-color-danger-light-default);
 
     &:hover {
-      border-color: var(--semi-color-danger-light-hover);
-      background-color: var(--semi-color-danger-light-hover);
+      border-color: var(--dme-color-danger-light-hover);
+      background-color: var(--dme-color-danger-light-hover);
     }
 
     &:active {
-      border-color: var(--semi-color-danger);
-      background-color: var(--semi-color-danger-light-hover);
+      border-color: var(--dme-color-danger);
+      background-color: var(--dme-color-danger-light-hover);
     }
 
     &.dme-input-focus {
-      border-color: var(--semi-color-danger);
-      background-color: var(--semi-color-danger-light-default);
+      border-color: var(--dme-color-danger);
+      background-color: var(--dme-color-danger-light-default);
 
       &:hover {
-        border-color: var(--semi-color-danger-light-default);
-        background-color: var(--semi-color-danger-light-default);
+        border-color: var(--dme-color-danger-light-default);
+        background-color: var(--dme-color-danger-light-default);
       }
 
       &:active {
-        border-color: var(--semi-color-danger);
-        background-color: var(--semi-color-danger-light-default);
+        border-color: var(--dme-color-danger);
+        background-color: var(--dme-color-danger-light-default);
       }
     }
   }
