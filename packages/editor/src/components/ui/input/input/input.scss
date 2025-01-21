@@ -1,0 +1,82 @@
+.dme-input-wrapper {
+  height: 32px;
+  line-height: 30px;
+  width: 100%;
+  background-color: var(--dme-color-fill-0);
+  border-radius: var(--dme-border-radius-small);
+  border: solid 1px transparent;
+  box-sizing: border-box;
+  cursor: text;
+  transition:
+    background-color var(--dme-transition_duration-none) var(--dme-transition_function-easeIn)
+      var(--dme-transition_delay-none),
+    border var(--dme-transition_duration-none) var(--dme-transition_function-easeIn) var(--dme-transition_delay-none);
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    border-color: transparent;
+    background-color: var(--dme-color-fill-1);
+  }
+
+  &:active {
+    border-color: var(--dme-color-primary);
+    background-color: var(--dme-color-fill-2);
+  }
+
+  &.dme-input-focus {
+    border-color: var(--dme-color-primary);
+
+    &:hover {
+      background-color: var(--dme-color-fill-0);
+    }
+
+    &:active {
+      border-color: var(--dme-color-primary);
+      background-color: var(--dme-color-fill-0);
+    }
+  }
+
+  &.dme-input-error {
+    border-color: var(--semi-color-danger-light-default);
+    background-color: var(--semi-color-danger-light-default);
+
+    &:hover {
+      border-color: var(--semi-color-danger-light-hover);
+      background-color: var(--semi-color-danger-light-hover);
+    }
+
+    &:active {
+      border-color: var(--semi-color-danger);
+      background-color: var(--semi-color-danger-light-hover);
+    }
+
+    &.dme-input-focus {
+      border-color: var(--semi-color-danger);
+      background-color: var(--semi-color-danger-light-default);
+
+      &:hover {
+        border-color: var(--semi-color-danger-light-default);
+        background-color: var(--semi-color-danger-light-default);
+      }
+
+      &:active {
+        border-color: var(--semi-color-danger);
+        background-color: var(--semi-color-danger-light-default);
+      }
+    }
+  }
+
+  .dme-input {
+    padding: 0 12px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: var(--dme-color-text-0);
+    box-sizing: border-box;
+    background-color: transparent;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+  }
+}

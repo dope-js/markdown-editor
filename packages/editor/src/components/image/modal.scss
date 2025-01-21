@@ -1,0 +1,28 @@
+.dme-image-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &-field {
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    overflow: hidden;
+
+    &__label {
+      font-weight: 600;
+      color: var(--dme-color-text-0);
+      margin-bottom: 4px;
+      margin-top: 0px;
+      padding-right: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__main {
+      width: 100%;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+export * from './alert-circle';
 export * from './align-center';
 export * from './align-left';
 export * from './align-right';
@@ -28,3 +29,4 @@ export * from './strike-through';
 export * from './tick';
 export * from './underline';
 export * from './undo';
+export * from './upload';

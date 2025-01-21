@@ -49,4 +49,8 @@ export const enUS = {
   'toolbar.formular.inline': 'Inline formular',
   'toolbar.formular.block': 'Formular block',
   'toolbar.thematicBreak': 'Insert thematic break',
+  'upload.description': 'Click to upload the file or drag and drop the file here',
+  'upload.tip.legal': 'Release and start uploading',
+  'upload.tip.illegal.multiple': 'Multiple files are not supported',
+  'upload.tip.illegal.type': 'This type of file is not supported',
 } as const;

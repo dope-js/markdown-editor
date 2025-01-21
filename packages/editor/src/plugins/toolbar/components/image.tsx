@@ -6,7 +6,7 @@ import { readOnly$ } from '../../core';
 
 export const InsertImage: FC = () => {
   const [readOnly] = useCellValues(readOnly$);
-  const { imageUploadUrl, imageUploadHeaders, imageUploadResponseHandler, t } = useEditor();
+  const { t } = useEditor();
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -17,15 +17,7 @@ export const InsertImage: FC = () => {
         disabled={readOnly}
         onClick={() => setModalVisible(true)}
       />
-      {modalVisible && (
-        <UploadModal
-          visible={modalVisible}
-          setVisible={setModalVisible}
-          uploadUrl={imageUploadUrl}
-          uploadRequestHeaders={imageUploadHeaders}
-          checkResponse={imageUploadResponseHandler}
-        />
-      )}
+      {modalVisible && <UploadModal visible={modalVisible} setVisible={setModalVisible} />}
     </>
   );
 };

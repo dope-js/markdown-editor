@@ -49,4 +49,8 @@ export const zhCN = {
   'toolbar.formular.inline': 'Inline formular',
   'toolbar.formular.block': 'Formular block',
   'toolbar.thematicBreak': 'Insert thematic break',
+  'upload.description': '点击上传文件或拖拽文件到这里',
+  'upload.tip.legal': '松开开始上传',
+  'upload.tip.illegal.multiple': '不支持多个文件上传',
+  'upload.tip.illegal.type': '不支持此类型文件',
 } as const;

@@ -1,4 +1,3 @@
-import type { AxiosResponse } from 'axios';
 import type { EditorThemeClasses } from 'lexical';
 import type { Options as ToMarkdownOptions } from 'mdast-util-to-markdown';
 import type { ReactNode } from 'react';
@@ -30,6 +29,15 @@ export interface EditorMethods {
     }
   ) => void;
 }
+
+export interface HandleUploadArgs {
+  file: File;
+  onError: (message?: string) => void;
+  onSuccess: (args: { url: string; width?: number; height?: number }) => void;
+  onProgress: (progress: number) => void;
+}
+
+export type HandleUploadFn = (args: HandleUploadArgs) => void | Promise<void>;
 
 export interface EditorProps {
   /**
@@ -97,9 +105,7 @@ export interface EditorProps {
 
   dark?: boolean;
 
-  imageUploadUrl?: string;
-  imageUploadHeaders?: Record<string, string>;
-  imageUploadResponseHandler?: (res: AxiosResponse) => string | { message: string };
+  handleUpload?: HandleUploadFn;
 
   locale?: 'zh-CN' | 'en-US';
 }

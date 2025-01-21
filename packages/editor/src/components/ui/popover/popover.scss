@@ -15,15 +15,12 @@
 
   &[x-placement='top'] {
     .demi-popover-arrow {
-      // left: 50%;
-      // transform: translateX(-50%);
       bottom: -7px;
     }
   }
 
   &[x-placement='bottom'] {
     .demi-popover-arrow {
-      // left: 50%;
       transform: rotate(180deg);
       top: -7px;
     }
@@ -32,7 +29,6 @@
   &[x-placement='right'] {
     .demi-popover-arrow {
       left: -15px;
-      // top: 50%;
       transform: rotate(90deg);
     }
   }
@@ -40,7 +36,6 @@
   &[x-placement='left'] {
     .demi-popover-arrow {
       right: -15px;
-      // top: 50%;
       transform: rotate(270deg);
     }
   }

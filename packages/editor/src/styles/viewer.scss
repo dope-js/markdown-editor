@@ -1,0 +1,70 @@
+@use './markdown';
+
+.dmv-wrapper {
+  font-size: 14px;
+  text-align: left;
+  color: var(--dme-color-text-0);
+
+  @include markdown.dom-style;
+
+  p code {
+    background-color: var(--dme-color-fill-0);
+    padding: 1px 0.2rem;
+    margin: 0 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 94%;
+    border-radius: var(--dme-border-radius-small);
+  }
+
+  .dmv-code-block {
+    pre[class*='language-'] {
+      border-radius: var(--dme-border-radius-medium);
+    }
+  }
+
+  .dmv-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0;
+
+    :global(.dopejs-image) {
+      max-width: 80%;
+    }
+  }
+
+  .dmv-table {
+    margin: 12px 0;
+    border-radius: var(--dme-border-radius-medium);
+    border: solid 1px var(--dme-color-border);
+  }
+
+  table {
+    width: 100%;
+    line-height: 150%;
+    border-collapse: collapse;
+    border-style: hidden;
+
+    thead {
+      background-color: var(--dme-color-fill-0);
+    }
+
+    tr {
+      border-bottom: solid 1px var(--dme-color-border);
+    }
+
+    th,
+    td {
+      padding: 6px 8px;
+      border-right: solid 1px var(--dme-color-border);
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  .katex {
+    user-select: none;
+  }
+}
