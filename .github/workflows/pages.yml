@@ -41,7 +41,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Build project
+      - name: Build editor
+        run: cd packages/editor && pnpm build
+
+      - name: Build pages
         run: cd examples && pnpm build
 
       - name: Upload production-ready build files
