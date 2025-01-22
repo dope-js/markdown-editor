@@ -53,8 +53,8 @@ jobs:
       - name: Publish
         run: |
           pnpm config set registry=https://registry.npmjs.org/
-          npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
-          npm whoami
+          pnpm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
+          pnpm whoami
 
           DIST_TAG=latest
           if [[ ${{ github.event.inputs.release_type }} == 'beta' ]]; then
