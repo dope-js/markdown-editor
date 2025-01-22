@@ -34,17 +34,22 @@ jobs:
         with:
           run_install: false
 
-      - name: Edit editor version
-        run: node scripts/replace-workspace-protocol-by-version.mjs examples/package.json
-
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
       - name: Build editor
         run: cd packages/editor && pnpm build
 
+      - name: Edit editor version
+        run: node scripts/replace-workspace-protocol-by-version.mjs examples/package.json
+
+      - name: Reinstall dependencies
+        working-directory: ./examples
+        run: pnpm install --no-frozen-lockfile
+
       - name: Build pages
-        run: cd examples && pnpm --recursive build
+        working-directory: ./examples
+        run: pnpm --recursive build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
