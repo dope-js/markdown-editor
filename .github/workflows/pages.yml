@@ -2,10 +2,6 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ['main']
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -44,8 +40,11 @@ jobs:
       - name: Build editor
         run: cd packages/editor && pnpm build
 
+      - name: Edit editor version
+        run: node scripts/replace-workspace-protocol-by-version.mjs examples/package.json
+
       - name: Build pages
-        run: cd examples && pnpm build
+        run: cd examples && pnpm --recursive build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
