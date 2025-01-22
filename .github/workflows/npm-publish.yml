@@ -1,33 +1,84 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Node.js Package
+name: Publish to NPM
 
 on:
-  release:
-    types: [created]
+  workflow_dispatch:
+    inputs:
+      release_type:
+        type: choice
+        description: 'Release type'
+        options:
+          - patch
+          - minor
+          - major
+          - beta
+          - alpha
+          - next
 
 jobs:
-  build:
+  publish-new-version:
+    name: 'Publish a new version'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
-      - run: npm test
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+
+      - name: Setup Pnpm
+        uses: pnpm/action-setup@v4
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Get new version
+        run: echo "RELEASE_VERSION="$(node scripts/new-version.js)"" >> $GITHUB_ENV
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          RELEASE_TYPE: ${{ github.event.inputs.release_type }}
+
+      - name: Change version
+        run: |
+          if [[ -z $RELEASE_VERSION ]]; then
+            echo "new version is empty"
+            exit 1
+          fi
+
+          node scripts/change-version.js $RELEASE_VERSION
+
+      - name: Publish
+        working-directory: ./packages/editor
+        run: |
+          npm config set registry=https://registry.npmjs.org/
+          npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
+          npm whoami
+
+          DIST_TAG=latest
+          if [[ ${{ github.event.inputs.release_type }} == 'beta' ]]; then
+            DIST_TAG=beta
+          elif [[ ${{ github.event.inputs.release_type }} == 'alpha' ]]; then
+            DIST_TAG=alpha
+          elif [[ ${{ github.event.inputs.release_type }} == 'next' ]]; then
+            DIST_TAG=next
+          fi
+
+          echo "Dist tag: $DIST_TAG"
+
+          pnpm publish -r --tag $DIST_TAG --no-git-checks
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'John Zhang'
+          git config --global user.email 'iamjz210@gmail.com'
+          git add .
+          git commit -m "Update version to $RELEASE_VERSION for release ${{ github.ref }}"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
