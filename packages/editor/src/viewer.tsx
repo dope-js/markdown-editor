@@ -11,13 +11,13 @@ import { codeBlock, lazyloadPlugin } from './viewer/plugins';
 
 import './styles/viewer.scss';
 
-interface IMDXViewer {
+export interface IMDXViewerProps {
   markdown: string;
   className?: string;
   dark?: boolean;
 }
 
-export const MDXViewer: FC<IMDXViewer> = ({ markdown, className, dark = false }) => {
+export const MDXViewer: FC<IMDXViewerProps> = ({ markdown, className, dark = false }) => {
   const MDXContentComponent = useMemo(() => {
     // @ts-expect-error TODO: fix this
     const result = evaluateSync(markdown, {

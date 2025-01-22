@@ -74,6 +74,8 @@ jobs:
           git config --global user.name 'John Zhang'
           git config --global user.email 'iamjz210@gmail.com'
           git add .
+          git tag -d v$RELEASE_VERSION
+          git tag v$RELEASE_VERSION
           git commit -m "Update version to $RELEASE_VERSION for release ${{ github.ref }}"
 
       - name: Push changes
@@ -81,3 +83,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+          tags: true
