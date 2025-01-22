@@ -51,9 +51,8 @@ jobs:
           node scripts/change-version.js $RELEASE_VERSION
 
       - name: Publish
-        working-directory: ./packages/editor
         run: |
-          npm config set registry=https://registry.npmjs.org/
+          pnpm config set registry=https://registry.npmjs.org/
           npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
           npm whoami
 

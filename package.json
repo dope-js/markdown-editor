@@ -17,6 +17,8 @@
     "node": "^14.18.0 || >=16.0.0"
   },
   "scripts": {
+    "build": "pnpm run --filter ./packages/editor build",
+    "publish": "pnpm run --filter ./packages/editor publish",
     "lint": "eslint . --ext .ts,.tsx"
   },
   "keywords": [],
