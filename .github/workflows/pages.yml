@@ -36,12 +36,10 @@ jobs:
       - name: Setup Pnpm
         uses: pnpm/action-setup@v4
         with:
-          run_install: |
-            - recursive: true
-              args: [--frozen-lockfile, --strict-peer-dependencies]
+          run_install: false
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build project
         run: cd examples && pnpm build
