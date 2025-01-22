@@ -34,14 +34,14 @@ jobs:
         with:
           run_install: false
 
+      - name: Edit editor version
+        run: node scripts/replace-workspace-protocol-by-version.mjs examples/package.json
+
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
       - name: Build editor
         run: cd packages/editor && pnpm build
-
-      - name: Edit editor version
-        run: node scripts/replace-workspace-protocol-by-version.mjs examples/package.json
 
       - name: Build pages
         run: cd examples && pnpm --recursive build
