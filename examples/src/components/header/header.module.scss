@@ -1,0 +1,15 @@
+.wrapper {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  flex-shrink: 0;
+  border-bottom: solid 1px var(--dme-color-border);
+
+  .brand {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--dme-color-primary);
+  }
+}
