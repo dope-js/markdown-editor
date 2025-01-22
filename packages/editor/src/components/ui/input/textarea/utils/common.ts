@@ -1,4 +1,4 @@
-import { isFunction, isNumber, isString } from '@/utils';
+import { isFunction, isNumber, isString } from 'lodash-es';
 
 export function handleTruncateValue(value: string, maxLength: number, getValueLength?: (value: string) => number) {
   if (isFunction(getValueLength)) {

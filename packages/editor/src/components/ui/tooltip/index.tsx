@@ -50,7 +50,7 @@ export const Tooltip: FC<ITooltipProps> = ({ children, content }) => {
         {children}
       </div>
       {isOpen && (
-        <FloatingPortal>
+        <FloatingPortal root={document.body}>
           <div
             className={clsx('dme-tooltip', { 'dme-dark': dark })}
             ref={refs.setFloating}

@@ -6,7 +6,6 @@ import {
   exportMarkdownFromLexical,
   importMarkdownToLexical,
   lexicalTheme,
-  noop,
 } from '@/utils';
 import type { ImportPoint, LexicalConvertOptions, MarkdownParseOptions, MdastImportVisitor } from '@/utils';
 import { createEmptyHistoryState } from '@lexical/react/LexicalHistoryPlugin';
@@ -44,6 +43,7 @@ import {
   createCommand,
   createEditor,
 } from 'lexical';
+import { noop } from 'lodash-es';
 import type * as Mdast from 'mdast';
 import { gfmStrikethroughFromMarkdown, gfmStrikethroughToMarkdown } from 'mdast-util-gfm-strikethrough';
 import { mdxJsxFromMarkdown, mdxJsxToMarkdown } from 'mdast-util-mdx-jsx';

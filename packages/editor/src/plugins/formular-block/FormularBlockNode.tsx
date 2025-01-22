@@ -1,4 +1,5 @@
 import { voidEmitter } from '@/utils';
+import clsx from 'clsx';
 import type { EditorConfig, LexicalEditor, LexicalNode, NodeKey, SerializedLexicalNode, Spread } from 'lexical';
 import { DecoratorNode } from 'lexical';
 import { FormularBlock } from './components';
@@ -47,7 +48,7 @@ export class FormularBlockNode extends DecoratorNode<JSX.Element> {
 
   createDOM(_config: EditorConfig): HTMLSpanElement {
     const div = document.createElement('div');
-    div.className = 'dme-formular-block';
+    div.className = clsx('dme-block-node', 'dme-formular-block');
 
     return div;
   }

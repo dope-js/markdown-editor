@@ -1,4 +1,3 @@
-export * from './common';
 export * from './detectMac';
 export * from './fp';
 export * from './is-part';

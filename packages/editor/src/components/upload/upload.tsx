@@ -1,7 +1,7 @@
 import { useEditor } from '@/contexts';
 import type { HandleUploadArgs, HandleUploadFn } from '@/types';
-import { noop } from '@/utils';
 import clsx from 'clsx';
+import { noop } from 'lodash-es';
 import type { FC } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { IconUpload } from '../ui';

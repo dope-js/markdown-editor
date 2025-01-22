@@ -1,4 +1,4 @@
-import { noop } from '@/utils';
+import { noop } from 'lodash-es';
 import { useMemo, type FC } from 'react';
 import { BaseButton } from './base';
 import { IconButton } from './icon';

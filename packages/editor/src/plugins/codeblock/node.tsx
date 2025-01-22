@@ -82,7 +82,9 @@ export class CodeBlockNode extends DecoratorNode<JSX.Element> {
 
   // View
   createDOM(_config: EditorConfig): HTMLDivElement {
-    return document.createElement('div');
+    const div = document.createElement('div');
+    div.className = 'dme-block-node';
+    return div;
   }
 
   updateDOM(): false {

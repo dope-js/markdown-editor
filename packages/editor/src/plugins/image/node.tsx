@@ -171,7 +171,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
   createDOM(config: EditorConfig): HTMLElement {
     const div = document.createElement('div');
     const theme = config.theme;
-    const className = clsx(theme.image, 'dme-image-container');
+    const className = clsx(theme.image, 'dme-block-node', 'dme-image-container');
     if (className !== undefined) {
       div.className = className;
     }

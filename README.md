@@ -39,3 +39,8 @@ export default function Page() {
   return <MDXViewer mdx={'# test'} />;
 }
 ```
+
+## Reference
+
+- [@mdxeditor/editor](https://github.com/mdx-editor/editor)
+- [@douyinfe/semi-ui](https://github.com/DouyinFE/semi-design)

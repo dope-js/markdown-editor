@@ -1,4 +1,4 @@
-import { isObject } from '@/utils';
+import { isObject } from 'lodash-es';
 import type { RefObject } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { AutosizeRow } from './types';

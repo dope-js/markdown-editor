@@ -1,11 +1,4 @@
-import type {
-  ChangeEvent,
-  FocusEvent,
-  KeyboardEvent,
-  MouseEvent,
-  MutableRefObject,
-  TextareaHTMLAttributes,
-} from 'react';
+import type { ChangeEvent, FocusEvent, KeyboardEvent, MouseEvent, TextareaHTMLAttributes } from 'react';
 
 export type AutosizeRow = {
   minRows?: number;
@@ -27,19 +20,10 @@ type OmitTextareaAttr =
 
 export interface ITextAreaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, OmitTextareaAttr> {
   autosize?: boolean | AutosizeRow;
-  borderless?: boolean;
   placeholder?: string;
   value?: string;
   rows?: number;
-  cols?: number;
-  maxCount?: number;
-  defaultValue?: string;
-  disabled?: boolean;
-  readonly?: boolean;
   autoFocus?: boolean;
-  showCounter?: boolean;
-  showClear?: boolean;
-  onClear?: (e: MouseEvent<HTMLTextAreaElement>) => void;
   onChange?: (value: string, e: ChangeEvent<HTMLTextAreaElement>) => void;
   onBlur?: (e: FocusEvent<HTMLTextAreaElement>) => void;
   onFocus?: (e: FocusEvent<HTMLTextAreaElement>) => void;
@@ -50,6 +34,4 @@ export interface ITextAreaProps extends Omit<TextareaHTMLAttributes<HTMLTextArea
   onEnterPress?: (e: KeyboardEvent<HTMLTextAreaElement>) => void;
   onPressEnter?: (e: KeyboardEvent<HTMLTextAreaElement>) => void;
   onResize?: (data: { height: number }) => void;
-  getValueLength?: (value: string) => number;
-  forwardRef?: ((instance: HTMLTextAreaElement) => void) | MutableRefObject<HTMLTextAreaElement> | null;
 }

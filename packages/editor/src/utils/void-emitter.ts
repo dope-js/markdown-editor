@@ -1,4 +1,4 @@
-import { noop } from './common';
+import { noop } from 'lodash-es';
 
 /**
  * An emitter object that has a single subscription that will be executed.

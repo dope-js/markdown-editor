@@ -47,7 +47,7 @@ export const Modal: FC<IModalProps> = ({
   const { getFloatingProps } = useInteractions([dismiss]);
 
   return (
-    <FloatingPortal>
+    <FloatingPortal root={document.body}>
       <FloatingOverlay className={clsx('dme-modal-overlay', { 'dme-dark': dark })} lockScroll>
         <FloatingFocusManager context={context}>
           <div className="dme-modal" ref={refs.setFloating} {...getFloatingProps()}>

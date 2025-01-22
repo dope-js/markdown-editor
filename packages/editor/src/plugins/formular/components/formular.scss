@@ -31,6 +31,8 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 12px;
+  color: var(--dme-color-text-0);
 
   .dme-formular-input {
     font-family: var(--dme-font-mono);

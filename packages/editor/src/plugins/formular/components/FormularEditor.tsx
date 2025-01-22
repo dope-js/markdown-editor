@@ -42,6 +42,7 @@ export const FormularEditor: FC<IFormularEditorProps> = ({ math, onChange, autoF
         autoComplete="off"
         autoCorrect="off"
         autoCapitalize="off"
+        autoFocus={autoFocus}
         data-1p-ignore
         className="dme-formular-input"
         // ref={ref}

@@ -1,0 +1,47 @@
+.dme-textarea-wrapper {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: var(--dme-border-radius-small);
+  vertical-align: bottom;
+  background-color: var(--dme-color-fill-0);
+  cursor: text;
+
+  &:hover {
+    background-color: var(--dme-color-fill-1);
+  }
+
+  &:active {
+    border-color: var(--dme-color-primary);
+    background-color: var(--dme-color-fill-2);
+  }
+
+  &.dme-textarea-wrapper-focused {
+    border-color: var(--dme-color-primary);
+
+    &:hover {
+      background-color: var(--dme-color-fill-0);
+    }
+
+    &:active {
+      background-color: var(--dme-color-fill-0);
+    }
+  }
+
+  .dme-textarea {
+    resize: none;
+    padding: 5px 12px;
+    box-shadow: none;
+    font-family: var(--dme-font-default);
+    font-size: 14px;
+    line-height: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: text;
+    box-sizing: border-box;
+    color: var(--dme-color-text-0);
+  }
+}

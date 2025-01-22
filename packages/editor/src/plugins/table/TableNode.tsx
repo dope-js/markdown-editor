@@ -1,6 +1,6 @@
-import { noop } from '@/utils';
 import type { LexicalEditor, LexicalNode, NodeKey, SerializedLexicalNode, Spread } from 'lexical';
 import { DecoratorNode } from 'lexical';
+import { noop } from 'lodash-es';
 import type * as Mdast from 'mdast';
 import { TableEditor } from './editor';
 
@@ -99,7 +99,9 @@ export class TableNode extends DecoratorNode<JSX.Element> {
 
   /** @internal */
   createDOM(): HTMLElement {
-    return document.createElement('div');
+    const div = document.createElement('div');
+    div.className = 'dme-block-node';
+    return div;
   }
 
   /** @internal */

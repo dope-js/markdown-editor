@@ -1,5 +1,5 @@
 import type { EditorProps } from '@/types';
-import { noop } from '@/utils';
+import { noop } from 'lodash-es';
 import type { IEditorContext } from './types';
 
 export function initContext(editorProps: EditorProps): Omit<IEditorContext, 'rootEditor' | 't'> {

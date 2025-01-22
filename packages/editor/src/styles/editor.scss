@@ -47,3 +47,12 @@
   color: var(--dme-color-primary);
   font-weight: 700;
 }
+
+.katex-display,
+.katex {
+  user-select: none;
+}
+
+.dme-block-node {
+  margin: 0.6em 0;
+}

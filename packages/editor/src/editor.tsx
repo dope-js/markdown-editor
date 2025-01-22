@@ -1,4 +1,5 @@
 import { clsx } from 'clsx';
+import { noop } from 'lodash-es';
 import type { Options as ToMarkdownOptions } from 'mdast-util-to-markdown';
 import { forwardRef, useMemo } from 'react';
 import { LexicalProvider, Methods, EditorWrapper, RichTextEditor } from './components';
@@ -21,7 +22,6 @@ import {
   imagePlugin,
 } from './plugins';
 import type { EditorMethods, EditorProps, EditorPlugin } from './types';
-import { noop } from './utils';
 
 import 'katex/dist/katex.min.css';
 import './styles/editor.scss';
