@@ -50,6 +50,23 @@ jobs:
 
           node scripts/change-version.js $RELEASE_VERSION
 
+      - name: Commit changes
+        run: |
+          git config --global user.name 'John Zhang'
+          git config --global user.email 'iamjz210@gmail.com'
+          git add .
+          git tag -f v$RELEASE_VERSION
+          git commit -m "Update version to $RELEASE_VERSION for release ${{ github.ref }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+
+      - name: Push changes
+        run: |
+          git push --force origin v$RELEASE_VERSION
+          git push --force origin ${{ github.ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+
       - name: Publish
         run: |
           pnpm config set registry=https://registry.npmjs.org/
@@ -68,19 +85,3 @@ jobs:
           echo "Dist tag: $DIST_TAG"
 
           pnpm publish -r --tag $DIST_TAG --no-git-checks
-
-      - name: Commit changes
-        run: |
-          git config --global user.name 'John Zhang'
-          git config --global user.email 'iamjz210@gmail.com'
-          git add .
-          git tag v$RELEASE_VERSION
-          git commit -m "Update version to $RELEASE_VERSION for release ${{ github.ref }}"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GIT_TOKEN }}
-          branch: ${{ github.ref }}
-          force: true
-          tags: true
