@@ -1,0 +1,15 @@
+{
+  "fields": [
+    "independent"
+  ],
+  "withoutPublish": true,
+  "tempDir": ".publish",
+  "files": [
+    "src",
+    ".storybook",
+    "api-extractor.json",
+    "rollup.config.ts",
+    "tsconfig.base.json",
+    "tsconfig.json"
+  ]
+}

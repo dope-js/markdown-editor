@@ -38,6 +38,7 @@
     "@types/node": "^22.10.7",
     "@types/rollup-plugin-peer-deps-external": "^2.2.5",
     "autoprefixer": "^10.4.20",
+    "clean-publish": "^5.1.0",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-import-resolver-typescript": "^3.7.0",

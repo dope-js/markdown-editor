@@ -1,6 +1,6 @@
 {
   "name": "@dope-js/markdown-editor",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
@@ -14,7 +14,10 @@
     "clear": "rimraf lib",
     "clear-temp": "rimraf lib/.typing.temp",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "clean-publish": "rimraf ./.publish && clean-publish --access public",
+    "prepublishOnly": "run-s build clean-publish",
+    "postpublish": "rimraf ./.publish"
   },
   "main": "lib/index.cjs.js",
   "module": "lib/index.es.js",
@@ -34,7 +37,18 @@
   },
   "publishConfig": {
     "types": "lib/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./lib/index.d.ts",
+        "import": "./lib/index.es.js",
+        "require": "./lib/index.cjs.js"
+      },
+      "./lib/*": "./lib/*",
+      "./package.json": "./package.json",
+      "./style.css": "./lib/style.css"
+    },
     "access": "public",
+    "directory": ".publish",
     "registry": "https://registry.npmjs.org/"
   },
   "keywords": [],

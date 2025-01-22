@@ -25,6 +25,7 @@ lerna-debug.log
 
 lib
 dist
+.publish
 
 # local env files
 .env*.local
