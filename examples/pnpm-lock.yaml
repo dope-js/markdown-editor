@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@dope-js/markdown-editor':
-        specifier: 0.0.9
-        version: 0.0.9(@codemirror/language@6.10.8)(@lezer/highlight@1.2.1)(acorn@8.14.0)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.23)
+        specifier: 0.0.10
+        version: 0.0.10(@codemirror/language@6.10.8)(@lezer/highlight@1.2.1)(acorn@8.14.0)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.23)
       '@floating-ui/react':
         specifier: ^0.27.3
         version: 0.27.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -151,8 +151,8 @@ packages:
   '@codemirror/view@6.36.2':
     resolution: {integrity: sha512-DZ6ONbs8qdJK0fdN7AB82CgI6tYXf4HWk1wSVa0+9bhVznCuuvhQtX8bFBoy3dv8rZSQqUd8GvhVAcielcidrA==}
 
-  '@dope-js/markdown-editor@0.0.9':
-    resolution: {integrity: sha512-Ua3E71ElWqruJLxVZiABnz2LZ4iSGZl5rULTXwuaAtjskow/HEX5pHlZwfwWLQx1xQdfz0vC21uUpiS5VVlYJw==}
+  '@dope-js/markdown-editor@0.0.10':
+    resolution: {integrity: sha512-O/sTrSaeFdLbvOyb8Sl4Bspj03gw0OupOZpHyYn+7zO8JUmEShKtyje1HYi5hQoDCSmQCXiFQK6JXwQyAXekZQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -2157,7 +2157,7 @@ snapshots:
       style-mod: 4.1.2
       w3c-keyname: 2.2.8
 
-  '@dope-js/markdown-editor@0.0.9(@codemirror/language@6.10.8)(@lezer/highlight@1.2.1)(acorn@8.14.0)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.23)':
+  '@dope-js/markdown-editor@0.0.10(@codemirror/language@6.10.8)(@lezer/highlight@1.2.1)(acorn@8.14.0)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.23)':
     dependencies:
       '@codemirror/language-data': 6.5.1
       '@codemirror/state': 6.5.1
