@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  box-sizing: border-box;
+  padding: 6px;
+  border-radius: var(--dme-border-radius-medium);
+  background-color: var(--dme-color-fill-0);
+  position: relative;
+
+  .track {
+    position: absolute;
+    left: 6px;
+    width: 32px;
+    height: 24px;
+    background-color: var(--dme-color-bg-2);
+    border-radius: var(--dme-border-radius-medium);
+    z-index: 1;
+    transition: left 0.2s ease-in-out;
+  }
+
+  .item {
+    width: 32px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dme-color-text-1);
+    cursor: pointer;
+    z-index: 2;
+
+    &.selected {
+      color: var(--dme-color-primary);
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

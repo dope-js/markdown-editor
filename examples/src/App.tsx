@@ -8,16 +8,18 @@ import { Header } from './components/header';
 
 function App() {
   const [value, setValue] = useState(markdown);
+  const [locale, setLocale] = useState<'en-US' | 'zh-CN'>('en-US');
 
   return (
-    <div className={styles.wrapper}>
-      <Header />
+    <div className={`${styles.wrapper} dme-body`}>
+      <Header locale={locale} setLocale={setLocale} />
       <div className={styles.main}>
         <div className={styles.area}>
           <div className={styles.title}>Editor</div>
           <div className={styles.content}>
             <MDXEditor
               className={styles.editor}
+              locale={locale}
               placeholder="Hello world!"
               value={value}
               onChange={setValue}
