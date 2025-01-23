@@ -1,6 +1,6 @@
 {
   "name": "@dope-js/markdown-editor",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "",
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
