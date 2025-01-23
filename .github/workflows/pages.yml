@@ -34,13 +34,13 @@ jobs:
         with:
           run_install: false
 
-      - name: Edit editor version
-        working-directory: ./examples
-        run: node scripts/update-pkg-version.js
-
       - name: Install dependencies
         working-directory: ./examples
         run: pnpm install --no-frozen-lockfile
+
+      - name: Edit editor version
+        working-directory: ./examples
+        run: node scripts/update-pkg-version.js
 
       - name: Build pages
         working-directory: ./examples

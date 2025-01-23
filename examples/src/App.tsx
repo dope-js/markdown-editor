@@ -50,7 +50,7 @@ function App() {
           </div>
         </div>
         <div className={styles.area}>
-          <div className={styles.title}>View</div>
+          <div className={styles.title}>Viewer</div>
           <div className={`${styles.content} ${styles['viewer-wrapper']}`}>
             <MDXViewer className={styles.viewer} markdown={value} />
           </div>
