@@ -9,7 +9,7 @@ if (!newVersion) {
 
 const currentDirectory = process.cwd();
 
-const packageJsonPath = path.join(currentDirectory, 'packages', 'editor', 'package.json');
+const packageJsonPath = path.join(currentDirectory, 'package.json');
 const packageJsonContent = fs.readFileSync(packageJsonPath, 'utf8');
 const packageJson = JSON.parse(packageJsonContent);
 const currentVersion = packageJson.version;

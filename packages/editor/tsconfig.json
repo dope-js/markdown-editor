@@ -1,5 +1,0 @@
-{
-  "extends": "./tsconfig.base.json",
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "rollup.config.ts"],
-  "exclude": ["lib", "node_modules"]
-}

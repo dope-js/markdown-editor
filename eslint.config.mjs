@@ -7,7 +7,7 @@ import globals from 'globals';
 import { configs as tsConfigs, parser as tsParser, plugin as tsPlugin } from 'typescript-eslint';
 
 const basicConf = {
-  ignores: ['**/*.js', 'packages/**/lib/**/*'],
+  ignores: ['**/*.js', 'lib/**/*'],
 };
 
 const thirdPartyConf = [
@@ -51,7 +51,7 @@ const settings = {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.svg'],
       },
-      typescript: { project: 'packages/*/tsconfig.json' },
+      typescript: { project: './tsconfig.json' },
     },
     react: {
       pragma: 'React',

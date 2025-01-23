@@ -1,29 +1,111 @@
 {
-  "name": "markdown-editor",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@dope-js/markdown-editor",
+  "version": "0.0.10",
+  "description": "A wysiwyg markdown editor",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dope-js/markdown-editor"
   },
-  "main": "index.js",
-  "packageManager": "pnpm@9.15.4",
-  "workspaces": [
-    "packages/editor",
-    "packages/viewer",
-    "examples"
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
+  "types": "src/index.ts",
+  "files": [
+    "lib"
   ],
-  "engines": {
-    "node": "^14.18.0 || >=16.0.0"
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./lib/index.es.js",
+      "require": "./lib/index.cjs.js"
+    },
+    "./lib/*": "./lib/*",
+    "./package.json": "./package.json",
+    "./style.css": "./lib/style.css"
   },
+  "publishConfig": {
+    "types": "lib/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./lib/index.d.ts",
+        "import": "./lib/index.es.js",
+        "require": "./lib/index.cjs.js"
+      },
+      "./lib/*": "./lib/*",
+      "./package.json": "./package.json",
+      "./style.css": "./lib/style.css"
+    },
+    "access": "public",
+    "directory": ".publish",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "packageManager": "pnpm@9.15.4",
   "scripts": {
-    "build": "pnpm run --filter ./packages/editor build",
-    "publish": "pnpm run --filter ./packages/editor publish",
+    "watch": "pnpm run rollup --watch",
+    "build": "run-s clear rollup alias typing clear-temp",
+    "rollup": "rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "alias": "tsc-alias -p tsconfig.base.json --outDir ./lib/.typing.temp",
+    "typing": "api-extractor run --local --verbose",
+    "clear": "rimraf lib",
+    "clear-temp": "rimraf lib/.typing.temp",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "clean-publish": "rimraf ./.publish && clean-publish --access public",
+    "prepublishOnly": "run-s build clean-publish",
+    "postpublish": "rimraf ./.publish",
     "lint": "eslint . --ext .ts,.tsx"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "@codemirror/language-data": "^6.5.1",
+    "@codemirror/state": "^6.5.1",
+    "@codemirror/view": "^6.36.2",
+    "@floating-ui/react": "^0.27.3",
+    "@lexical/list": "^0.23.1",
+    "@lexical/markdown": "^0.23.1",
+    "@lexical/react": "^0.23.1",
+    "@lexical/rich-text": "^0.23.1",
+    "@lexical/selection": "^0.23.1",
+    "@lexical/utils": "^0.23.1",
+    "@mdx-js/mdx": "^3.0.1",
+    "@mdxeditor/gurx": "^1.2.3",
+    "clsx": "^2.1.1",
+    "cm6-theme-basic-dark": "^0.2.0",
+    "cm6-theme-basic-light": "^0.2.0",
+    "codemirror": "^6.0.1",
+    "katex": "^0.16.20",
+    "lexical": "^0.23.1",
+    "lodash-es": "^4.17.21",
+    "mdast-util-from-markdown": "^2.0.2",
+    "mdast-util-gfm-strikethrough": "^2.0.0",
+    "mdast-util-gfm-table": "^2.0.0",
+    "mdast-util-gfm-task-list-item": "^2.0.0",
+    "mdast-util-math": "^3.0.0",
+    "mdast-util-mdx": "^3.0.0",
+    "mdast-util-mdx-jsx": "^3.2.0",
+    "mdast-util-to-markdown": "^2.1.2",
+    "micromark-extension-gfm-strikethrough": "^2.1.0",
+    "micromark-extension-gfm-table": "^2.1.0",
+    "micromark-extension-gfm-task-list-item": "^2.1.0",
+    "micromark-extension-math": "^3.1.0",
+    "micromark-extension-mdx-jsx": "^3.0.1",
+    "micromark-extension-mdx-md": "^2.0.0",
+    "prismjs": "^1.29.0",
+    "react-katex": "^3.0.1",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/plugin-transform-runtime": "^7.25.9",

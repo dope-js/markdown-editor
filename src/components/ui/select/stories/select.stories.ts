@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Select } from '../select';
 
-const meta = {
+const meta: Meta<typeof Select> = {
   title: 'UI/Select',
   component: Select,
   parameters: {
@@ -20,7 +20,7 @@ const meta = {
       { label: 'Option 3', value: '3' },
     ],
   },
-} satisfies Meta<typeof Select>;
+};
 
 export default meta;
 

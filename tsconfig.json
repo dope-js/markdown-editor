@@ -1,17 +1,5 @@
 {
-  "compilerOptions": {
-    "module": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true
-  },
-  "exclude": ["**/*.js", "**/*.mjs", "node_modules"]
+  "extends": "./tsconfig.base.json",
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "rollup.config.ts"],
+  "exclude": ["lib", "node_modules"]
 }
