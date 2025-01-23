@@ -106,7 +106,7 @@ export default async () => {
           ],
         ],
       }),
-      copy({ targets: [{ src: resolve(root, '..', '..', 'assets', 'fonts'), dest: resolve(root, 'lib') }] }),
+      copy({ targets: [{ src: resolve(root, 'assets', 'fonts'), dest: resolve(root, 'lib') }] }),
     ],
   });
 };

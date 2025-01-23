@@ -71,6 +71,23 @@ jobs:
 
           pnpm publish -r --tag $DIST_TAG --no-git-checks
 
+      - name: Edit versions for Pages
+        working-directory: ./examples
+        run: node scripts/update-pkg-version.js $RELEASE_VERSION
+
+      - name: Install dependencies for Pages
+        working-directory: ./examples
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build pages
+        working-directory: ./examples
+        run: pnpm --recursive build
+
+      - name: Upload production-ready build files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./examples/dist
+
       - name: Commit changes
         run: |
           git config --global user.name 'John Zhang'
@@ -88,3 +105,15 @@ jobs:
           git push --force origin ${{ github.ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+
+  deploy-pages:
+    name: Deploy pages
+    needs: publish-new-version
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

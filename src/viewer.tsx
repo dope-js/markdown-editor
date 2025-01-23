@@ -29,6 +29,7 @@ export const MDXViewer: FC<IMDXViewerProps> = ({ markdown, className, dark = fal
   }, [dark]);
 
   const MDXContentComponent = useMemo(() => {
+    // @ts-expect-error ts(2345)
     const result = evaluateSync(markdown, {
       remarkPlugins: [remarkGfm, remarkMath, codeBlock],
       rehypePlugins: [rehypeKatex, lazyloadPlugin],

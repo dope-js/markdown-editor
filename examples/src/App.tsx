@@ -2,9 +2,9 @@ import { MDXEditor, MDXViewer } from '@dope-js/markdown-editor';
 import '@dope-js/markdown-editor/style.css';
 import { useState } from 'react';
 import styles from './app.module.scss';
+import { Header } from './components/header';
 import markdown from './markdown.mdx?raw';
 import { getImageSize, uploadFile } from './utils';
-import { Header } from './components/header';
 
 function App() {
   const [value, setValue] = useState(markdown);

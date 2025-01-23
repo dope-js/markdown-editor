@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { type FC, type PropsWithChildren, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 const storedThemeKey = 'dopejs-theme';

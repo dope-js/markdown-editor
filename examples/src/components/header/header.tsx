@@ -1,11 +1,3 @@
-import { FC, useState } from 'react';
-import styles from './header.module.scss';
-import { useTheme } from '../../contexts/theme';
-import { SwitchButtons } from '../switch-buttons/switch';
-import { IconMoon } from '../icons/moon';
-import { IconSun } from '../icons/sun';
-import { IconLanguage } from '../icons/language';
-import clsx from 'clsx';
 import {
   flip,
   FloatingPortal,
@@ -17,7 +9,16 @@ import {
   useHover,
   useInteractions,
 } from '@floating-ui/react';
+import clsx from 'clsx';
+import type { FC } from 'react';
+import { useState } from 'react';
+import styles from './header.module.scss';
+import { useTheme } from '../../contexts/theme';
+import { IconLanguage } from '../icons/language';
+import { IconMoon } from '../icons/moon';
+import { IconSun } from '../icons/sun';
 import { IconTick } from '../icons/tick';
+import { SwitchButtons } from '../switch-buttons/switch';
 
 interface IHeaderProps {
   locale: 'zh-CN' | 'en-US';

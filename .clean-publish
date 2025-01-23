@@ -5,6 +5,11 @@
   "withoutPublish": true,
   "tempDir": ".publish",
   "files": [
+    ".gitignore",
+    ".npmrc",
+    "scripts",
+    "examples",
+    "assets",
     "src",
     ".storybook",
     "api-extractor.json",

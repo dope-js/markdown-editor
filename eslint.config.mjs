@@ -7,7 +7,7 @@ import globals from 'globals';
 import { configs as tsConfigs, parser as tsParser, plugin as tsPlugin } from 'typescript-eslint';
 
 const basicConf = {
-  ignores: ['**/*.js', 'lib/**/*'],
+  ignores: ['**/*.js', 'lib/', '.publish/'],
 };
 
 const thirdPartyConf = [

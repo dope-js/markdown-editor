@@ -1,6 +1,7 @@
-import { FC, ReactNode, useMemo } from 'react';
-import styles from './switch.module.scss';
 import clsx from 'clsx';
+import type { FC, ReactNode } from 'react';
+import { useMemo } from 'react';
+import styles from './switch.module.scss';
 
 interface ISwitchOption {
   icon: ReactNode;

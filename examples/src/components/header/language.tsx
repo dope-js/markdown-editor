@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { IconLanguage } from '../icons/language';
 
 export const Language: FC = () => {
