@@ -1,0 +1,50 @@
+body[dme-theme='dark'] {
+  .sbdocs-wrapper,
+  .docs-story {
+    background-color: rgba(22, 22, 26, 1);
+  }
+
+  .sbdocs-preview {
+    border-color: rgba(35, 36, 41, 1);
+    background-color: rgba(35, 36, 41, 1);
+    box-shadow: none;
+  }
+
+  .sb-bar {
+    background-color: rgba(35, 36, 41, 1);
+    box-shadow: none;
+  }
+
+  .docblock-argstable {
+    background-color: rgba(35, 36, 41, 1);
+  }
+
+  div:has(> .docblock-code-toggle) {
+    background: transparent;
+  }
+
+  .docblock-code-toggle {
+    background: rgba(35, 36, 41, 1);
+    border-color: rgba(35, 36, 41, 1);
+    color: rgb(249, 249, 249);
+
+    &:focus {
+      box-shadow: rgb(50, 149, 251) 0 -3px 0 0 inset;
+    }
+  }
+
+  .docblock-argstable {
+    color: rgba(249, 249, 249, 0.62);
+  }
+
+  .sbdocs-title,
+  .docblock-argstable-head th {
+    color: rgba(249, 249, 249, 0.62);
+  }
+
+  .docblock-argstable-body {
+    > tr > * {
+      background: rgba(35, 36, 41, 1) !important;
+    }
+  }
+}

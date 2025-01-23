@@ -65,7 +65,7 @@ export const Image: FC<ImageProps> = ({ src, width, height, alt, title, crossOri
       )}
       {loadStatus === 'success' && isOpen && (
         <FloatingPortal root={document.body}>
-          <FloatingOverlay className={clsx('dme-image-preview-overlay')} lockScroll>
+          <FloatingOverlay className={clsx('dme-body', 'dme-image-preview-overlay')} lockScroll>
             <div className="dme-image-preview" ref={refs.setFloating} {...getFloatingProps()}>
               <PreviewImage src={src} zoom={zoom} onZoom={setZoom} hide={() => setIsOpen(false)} />
             </div>

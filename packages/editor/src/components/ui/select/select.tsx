@@ -1,4 +1,3 @@
-import { useEditor } from '@/contexts';
 import {
   flip,
   FloatingPortal,
@@ -8,14 +7,15 @@ import {
   useDismiss,
   useFloating,
   useInteractions,
+  useMergeRefs,
 } from '@floating-ui/react';
 import clsx from 'clsx';
 import type { FC } from 'react';
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { IconChevronDown } from '../icons';
+import { Option } from './option';
 
 import './select.scss';
-import { Option } from './option';
 
 interface IOptionItem {
   label: string;
@@ -34,8 +34,7 @@ export const Select: FC<ISelectProps> = ({ options, value, onChange, placeholder
   const [isOpen, setIsOpen] = useState(false);
   const [showInput, setShowInput] = useState(false);
   const [keyword, setKeyword] = useState('');
-
-  const { dark } = useEditor();
+  const ref = useRef<HTMLDivElement>(null);
 
   const displayOptions = useMemo(() => {
     if (!keyword) return options;
@@ -69,10 +68,12 @@ export const Select: FC<ISelectProps> = ({ options, value, onChange, placeholder
     return selectOption.label;
   }, [value]);
 
+  const mergedRef = useMergeRefs([refs.setReference, ref]);
+
   return (
     <>
       <div
-        ref={refs.setReference}
+        ref={mergedRef}
         {...getReferenceProps()}
         className={clsx('dme-select', { 'dme-select-focus': isFocused, 'dme-select-open': isOpen })}
       >
@@ -100,7 +101,7 @@ export const Select: FC<ISelectProps> = ({ options, value, onChange, placeholder
       {isOpen && (
         <FloatingPortal root={document.body}>
           <div
-            className={clsx({ 'dme-dark': dark })}
+            className="dme-body"
             ref={refs.setFloating}
             style={{ ...floatingStyles, zIndex: 1050 }}
             {...getFloatingProps()}

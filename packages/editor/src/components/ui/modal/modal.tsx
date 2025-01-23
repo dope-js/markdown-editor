@@ -35,7 +35,7 @@ export const Modal: FC<IModalProps> = ({
   onOk,
   okButtonProps,
 }) => {
-  const { dark, t } = useEditor();
+  const { t } = useEditor();
 
   const { context, refs } = useFloating({
     open: visible,
@@ -48,7 +48,7 @@ export const Modal: FC<IModalProps> = ({
 
   return (
     <FloatingPortal root={document.body}>
-      <FloatingOverlay className={clsx('dme-modal-overlay', { 'dme-dark': dark })} lockScroll>
+      <FloatingOverlay className={clsx('dme-body', 'dme-modal-overlay')} lockScroll>
         <FloatingFocusManager context={context}>
           <div className="dme-modal" ref={refs.setFloating} {...getFloatingProps()}>
             <div className="dme-modal-header">

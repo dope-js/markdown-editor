@@ -1,6 +1,5 @@
 @use './markdown';
-
-@import './variables.scss';
+@use './global.scss';
 
 .mdxeditor {
   max-height: 100%;

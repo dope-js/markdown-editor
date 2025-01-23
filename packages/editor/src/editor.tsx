@@ -93,7 +93,7 @@ export const MDXEditor = forwardRef<EditorMethods, EditorProps>(({ showToolbar =
   return (
     <EditorProvider editorProps={props}>
       <EditorWrapper plugins={plugins}>
-        <div className={clsx('mdxeditor', { 'dme-dark': props.dark }, props.className)}>
+        <div className={clsx('dme-body', 'mdxeditor', props.className)}>
           <LexicalProvider>
             <RichTextEditor />
           </LexicalProvider>

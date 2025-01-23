@@ -118,6 +118,8 @@
     "@types/react-katex": "^3.0.4",
     "@types/unist": "^3.0.3",
     "micromark-util-types": "^2.0.1",
-    "storybook": "^8.5.0"
+    "storybook": "^8.5.0",
+    "storybook-addon-dark-mode-toggle": "^0.0.6",
+    "storybook-dark-mode": "^4.0.2"
   }
 }

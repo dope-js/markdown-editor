@@ -1,4 +1,5 @@
 @use '../../../styles/common';
+@use './icon-button.scss';
 
 .dme-button {
   box-shadow: none;
@@ -276,5 +277,3 @@
     width: 100%;
   }
 }
-
-@import './icon-button.scss';

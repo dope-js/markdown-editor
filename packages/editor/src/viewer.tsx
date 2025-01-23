@@ -1,7 +1,7 @@
 import { evaluateSync } from '@mdx-js/mdx';
 import clsx from 'clsx';
 import type { FC } from 'react';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import * as runtime from 'react/jsx-runtime';
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
@@ -18,6 +18,16 @@ export interface IMDXViewerProps {
 }
 
 export const MDXViewer: FC<IMDXViewerProps> = ({ markdown, className, dark = false }) => {
+  useEffect(() => {
+    if (dark) {
+      document.body.setAttribute('dme-theme', 'dark');
+    } else {
+      if (document.body.hasAttribute('dme-theme')) {
+        document.body.removeAttribute('dme-theme');
+      }
+    }
+  }, [dark]);
+
   const MDXContentComponent = useMemo(() => {
     // @ts-expect-error TODO: fix this
     const result = evaluateSync(markdown, {
@@ -32,7 +42,7 @@ export const MDXViewer: FC<IMDXViewerProps> = ({ markdown, className, dark = fal
   if (!MDXContentComponent) return null;
 
   return (
-    <div className={clsx('dmv-wrapper', { 'dme-dark': dark }, className)}>
+    <div className={clsx('dme-body', 'dme-viewer-wrapper', className)}>
       <MDXContentComponent components={components} />
     </div>
   );

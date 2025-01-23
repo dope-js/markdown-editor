@@ -27,7 +27,7 @@ export const CodeBlock: FC<ICodeBlockProps> = ({ code, lang }) => {
   }, [code, ref.current, lang]);
 
   return (
-    <div className="dmv-code-block">
+    <div className="dme-viewer-code-block">
       <pre>
         <code ref={ref}>{code}</code>
       </pre>

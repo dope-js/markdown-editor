@@ -1,6 +1,6 @@
-@import './color.scss';
+@use './color.scss';
 
-body {
+.dme-body {
   --dme-font-default: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --dme-font-mono: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;

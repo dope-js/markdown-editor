@@ -1,0 +1,7 @@
+@use './variables.scss';
+
+.dme-body {
+  font-size: var(--dme-font-size-regular);
+  color: var(--dme-color-text-0);
+  font-family: var(--dme-font-default);
+}

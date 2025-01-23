@@ -1,4 +1,3 @@
-import { useEditor } from '@/contexts';
 import {
   arrow,
   flip,
@@ -38,7 +37,6 @@ export const Popover: FC<IPopoverProps> = ({
   contentClassName,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { dark } = useEditor();
   const arrowRef = useRef(null);
 
   useEffect(() => {
@@ -91,7 +89,7 @@ export const Popover: FC<IPopoverProps> = ({
       {isOpen && (
         <FloatingPortal root={document.body}>
           <div
-            className={clsx('dme-popover', { 'dme-dark': dark }, className)}
+            className={clsx('dme-body', 'dme-popover', className)}
             ref={refs.setFloating}
             style={{ ...floatingStyles, zIndex: 1050 }}
             // eslint-disable-next-line react/no-unknown-property

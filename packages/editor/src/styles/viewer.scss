@@ -1,6 +1,7 @@
 @use './markdown';
+@use './global.scss';
 
-.dmv-wrapper {
+.dme-viewer-wrapper {
   font-size: 14px;
   text-align: left;
   color: var(--dme-color-text-0);
@@ -16,7 +17,7 @@
     border-radius: var(--dme-border-radius-small);
   }
 
-  .dmv-code-block {
+  .dme-viewer-code-block {
     pre[class*='language-'] {
       border-radius: var(--dme-border-radius-medium);
     }
@@ -161,7 +162,7 @@
     }
   }
 
-  .dmv-image {
+  .dme-viewer-image {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,7 +173,7 @@
     }
   }
 
-  .dmv-table {
+  .dme-viewer-table {
     margin: 12px 0;
     border-radius: var(--dme-border-radius-medium);
     border: solid 1px var(--dme-color-border);

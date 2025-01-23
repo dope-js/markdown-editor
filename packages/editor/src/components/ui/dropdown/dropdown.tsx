@@ -1,4 +1,3 @@
-import { useEditor } from '@/contexts';
 import {
   flip,
   FloatingPortal,
@@ -9,7 +8,6 @@ import {
   useFloating,
   useInteractions,
 } from '@floating-ui/react';
-import clsx from 'clsx';
 import type { FC, ReactNode } from 'react';
 import { useState } from 'react';
 import { DropdownMenu, type IDropdownMenuItem } from './menu';
@@ -24,7 +22,6 @@ interface IDropdownProps {
 
 export const Dropdown: FC<IDropdownProps> = ({ children, menu, clickToHide = false }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { dark } = useEditor();
 
   const { refs, floatingStyles, context } = useFloating({
     placement: 'bottom-start',
@@ -45,12 +42,7 @@ export const Dropdown: FC<IDropdownProps> = ({ children, menu, clickToHide = fal
       </div>
       {isOpen && (
         <FloatingPortal root={document.body}>
-          <div
-            className={clsx({ 'dme-dark': dark })}
-            ref={refs.setFloating}
-            style={floatingStyles}
-            {...getFloatingProps()}
-          >
+          <div className="dme-body" ref={refs.setFloating} style={floatingStyles} {...getFloatingProps()}>
             <DropdownMenu clickToHide={clickToHide} menu={menu} closeMenu={() => setIsOpen(false)} />
           </div>
         </FloatingPortal>

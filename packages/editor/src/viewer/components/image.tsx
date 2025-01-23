@@ -9,7 +9,7 @@ export const Image: FC<{
   alt: string;
 }> = ({ width, height, src, title, alt }) => {
   return (
-    <div className="dmv-image">
+    <div className="dme-viewer-image">
       <ImageComp src={src} title={title} alt={alt} width={width} height={height} />
     </div>
   );
